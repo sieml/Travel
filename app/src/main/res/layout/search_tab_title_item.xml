@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="#fff"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:padding="8dp">
@@ -28,16 +29,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="4dp"
             android:layout_toRightOf="@id/searchIcId"
             android:background="@null"
-            android:textCursorDrawable="@null"
             android:drawableRight="@mipmap/search_clear_normal"
             android:gravity="center_vertical"
             android:hint="城市/景点/美食/购物"
             android:imeOptions="actionDone"
             android:textColorHint="#5000"
+            android:textCursorDrawable="@null"
             android:textSize="12sp"></com.travel.personaltravel.widget.ClearEditText>
 
 
@@ -47,7 +48,8 @@
         android:id="@+id/search_history_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="12dp"
+        android:padding="4dp"
         android:text="搜索"
         android:textSize="16sp" />
 </LinearLayout>

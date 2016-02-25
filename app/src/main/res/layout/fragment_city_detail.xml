@@ -1,192 +1,166 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              xmlns:card_view="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context="com.travel.personaltravel.fragment.CityDetailFragment"
-        >
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.travel.personaltravel.fragment.CityDetailFragment">
 
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    card_view:cardCornerRadius="10dp"
-                    android:elevation="10dp"
-                    >
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                card_view:cardCornerRadius="10dp">
+
                 <RelativeLayout
-                        android:id="@+id/fragment_city_detail_relativeLayout"
-                        android:descendantFocusability="beforeDescendants"
-                        android:layout_margin="10dp"
-                        android:background="#fff"
+                    android:id="@+id/fragment_city_detail_relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#fff"
+                    android:descendantFocusability="beforeDescendants">
+
+                    <LinearLayout
+                        android:id="@+id/fragment_city_detail_top_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        >
-                    <LinearLayout
-                            android:layout_width="match_parent"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:id="@+id/fragment_city_detail_top_linearLayout"
-                            >
-
-                        <android.support.v7.widget.CardView
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:elevation="10dp"
-                                card_view:cardCornerRadius="10dp"
-                                >
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="10dp"
+                            card_view:cardCornerRadius="10dp">
 
                             <ImageView
-                                    android:adjustViewBounds="true"
-                                    android:id="@+id/fcd_img0"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="100dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@mipmap/bgone"
-                                    />
+                                android:id="@+id/fcd_img0"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/bgone" />
                         </android.support.v7.widget.CardView>
 
-                        <android.support.v7.widget.CardView
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:elevation="10dp"
-                                android:layout_height="wrap_content"
-                                card_view:cardCornerRadius="10dp"
-                                >
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="10dp"
+                            card_view:cardCornerRadius="10dp">
 
                             <ImageView
-                                    android:scaleType="fitXY"
-                                    android:id="@+id/fcd_img1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="100dp"
-                                    android:src="@mipmap/bgtwo"
-                                    />
+                                android:id="@+id/fcd_img1"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/bgtwo" />
                         </android.support.v7.widget.CardView>
 
-                        <android.support.v7.widget.CardView
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:elevation="10dp"
-                                android:layout_height="wrap_content"
-                                card_view:cardCornerRadius="10dp"
-                                >
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="10dp"
+                            card_view:cardCornerRadius="10dp">
 
                             <ImageView
-                                    android:scaleType="fitXY"
-                                    android:id="@+id/fcd_img2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="100dp"
-                                    android:src="@mipmap/bgthree"
-                                    />
+                                android:id="@+id/fcd_img2"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/bgthree" />
                         </android.support.v7.widget.CardView>
                     </LinearLayout>
 
                     <TextView
-                            android:layout_below="@id/fragment_city_detail_top_linearLayout"
-                            android:layout_centerInParent="true"
-                            android:id="@+id/fcd_zhName"
-                            android:layout_width="wrap_content"
-                            android:text="三亚"
-                            android:textSize="20sp"
-                            android:textColor="#000"
-                            android:layout_marginTop="15dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_height="wrap_content"
-                            />
+                        android:id="@+id/fcd_zhName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fragment_city_detail_top_linearLayout"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:text="三亚"
+                        android:textColor="#000"
+                        android:textSize="20sp" />
 
                     <TextView
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@id/fcd_zhName"
-                            android:id="@+id/fcd_timeCostDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="~推荐旅行-3-6 天"
-                            />
+                        android:id="@+id/fcd_timeCostDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fcd_zhName"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:text="~推荐旅行-3-6 天" />
 
                     <LinearLayout
-                            android:layout_below="@id/fcd_timeCostDesc"
-                            android:layout_width="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fcd_timeCostDesc"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
-
-                        <android.support.v7.widget.CardView
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:elevation="10dp"
-                                android:layout_height="wrap_content"
-                                card_view:cardCornerRadius="4dp"
-                                >
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="10dp"
+                            card_view:cardCornerRadius="4dp">
 
                             <ImageView
-                                    android:adjustViewBounds="true"
-                                    android:id="@+id/fcd_img3"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="100dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@mipmap/bgfour"
-                                    />
+                                android:id="@+id/fcd_img3"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/bgfour" />
                         </android.support.v7.widget.CardView>
 
-                        <android.support.v7.widget.CardView
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:elevation="10dp"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                card_view:cardCornerRadius="4dp"
-                                >
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="10dp"
+                            card_view:cardCornerRadius="4dp">
 
                             <ImageView
-                                    android:adjustViewBounds="true"
-                                    android:id="@+id/fcd_img4"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="100dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@mipmap/bgfive"
-                                    />
+                                android:id="@+id/fcd_img4"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/bgfive" />
                         </android.support.v7.widget.CardView>
 
-                        <android.support.v7.widget.CardView
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:elevation="10dp"
-                                android:layout_height="wrap_content"
-                                card_view:cardCornerRadius="4dp"
-                                >
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="10dp"
+                            card_view:cardCornerRadius="4dp">
 
                             <ImageView
-                                    android:adjustViewBounds="true"
-                                    android:id="@+id/fcd_img5"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="100dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@mipmap/bgsix"
-                                    />
+                                android:id="@+id/fcd_img5"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/bgsix" />
                         </android.support.v7.widget.CardView>
 
                     </LinearLayout>
@@ -194,127 +168,117 @@
             </android.support.v7.widget.CardView>
 
             <TextView
-                    android:id="@+id/fcd_travelMonth"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:maxLines="2"
-                    android:text="~最佳季节: 全年皆宜.11一次年3月最佳"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
+                android:id="@+id/fcd_travelMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:maxLines="2"
+                android:text="~最佳季节: 全年皆宜.11一次年3月最佳" />
 
             <TextView
-                    android:id="@+id/fcd_desc"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:maxLines="2"
-                    android:text="三亚市位于海南岛最南端，是中国最南部的滨海旅游城市。因三亚河（古名临川水）由三亚东西河至此会合，"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
+                android:id="@+id/fcd_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:maxLines="2"
+                android:text="三亚市位于海南岛最南端，是中国最南部的滨海旅游城市。因三亚河（古名临川水）由三亚东西河至此会合，" />
 
-                <android.support.v7.widget.CardView
-                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:elevation="10dp"
-                        >
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
                     android:background="#fff"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
 
                     >
 
-                <ImageView
+                    <ImageView
                         android:id="@+id/fcd_guide"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/selector_guide"
-                        />
+                        android:layout_weight="1"
+                        android:src="@drawable/selector_guide" />
 
-                <ImageView
+                    <ImageView
                         android:id="@+id/fcd_spot"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/selector_spot"
-                        />
+                        android:layout_weight="1"
+                        android:src="@drawable/selector_spot" />
 
-                <ImageView
+                    <ImageView
                         android:id="@+id/fcd_food"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/selector_food"
-                        />
+                        android:layout_weight="1"
+                        android:src="@drawable/selector_food" />
 
-                <ImageView
+                    <ImageView
                         android:id="@+id/fcd_shopping"
                         android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/selector_shopping"
-                        />
-            </LinearLayout>
-                </android.support.v7.widget.CardView>
+                        android:src="@drawable/selector_shopping" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView
-                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:elevation="10dp"
-                        >
-            <LinearLayout
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:background="#fff"
-                    >
+                    android:orientation="horizontal">
 
-                <Button
+                    <Button
                         android:id="@+id/fcd_commtrip"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="推荐行程"
-                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:drawableLeft="@mipmap/joyney_plan_hilighted"
                         android:gravity="center"
                         android:paddingLeft="40dp"
                         android:paddingRight="40dp"
-                        android:background="#0000"
-                        android:drawableLeft="@mipmap/joyney_plan_hilighted"
-                        />
-                <TextView
+                        android:text="推荐行程"
+                        android:textSize="18sp" />
+
+                    <TextView
                         android:layout_width="1dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:background="#8888"
-                        />
-                <Button
+                        android:background="#8888" />
+
+                    <Button
                         android:id="@+id/fcd_commnote"
                         android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:drawableLeft="@mipmap/write_journey_normal"
+                        android:gravity="center"
                         android:paddingLeft="40dp"
                         android:paddingRight="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
                         android:text="相关游记"
-                        android:background="#0000"
-                        android:textSize="18sp"
-                        android:drawableLeft="@mipmap/write_journey_normal"
-                        />
-            </LinearLayout>
-                </android.support.v7.widget.CardView>
-            <include layout="@layout/fragment_city_detail_include"/>
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <include layout="@layout/fragment_city_detail_include" />
         </LinearLayout>
     </ScrollView>
 

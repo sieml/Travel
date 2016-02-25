@@ -111,7 +111,7 @@ public class CityDetailFragment extends Fragment implements View.OnClickListener
         cityDetail = new CityDetail();
         cityId = getArguments().getString("cityId");
         cityDetailUrl = String.format(SieConstant.Url_City_Detail, cityId);
-        datas = new ArrayList<CityDetailComment>();
+        datas = new ArrayList<>();
 
     }
 

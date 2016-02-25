@@ -68,7 +68,7 @@ public class PersonFragment extends Fragment implements CallBack, View.OnClickLi
 
         http = new HttpUtils();
 
-// 垂直布局
+        // 垂直布局
         layoutManager = new LinearLayoutManager(
                 getContext(),
                 LinearLayoutManager.VERTICAL,

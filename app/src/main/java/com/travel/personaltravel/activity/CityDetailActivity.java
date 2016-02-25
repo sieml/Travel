@@ -1,5 +1,7 @@
 package com.travel.personaltravel.activity;
+
 import com.travel.personaltravel.constant.SieConstant;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -14,6 +16,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.travel.personaltravel.R;
 import com.travel.personaltravel.fragment.CityDetailFragment;
+import com.travel.personaltravel.fragment.search.SearchCityDetailFragment;
 
 public class CityDetailActivity extends FragmentActivity implements View.OnClickListener {
 
@@ -25,10 +28,10 @@ public class CityDetailActivity extends FragmentActivity implements View.OnClick
     private TextView city_detail_title;
     private boolean flaghasgone = true;
     private boolean flaglike = true;
-    private CityDetailFragment fragment;
+    //private CityDetailFragment fragment;
+    private SearchCityDetailFragment fragment;
     private String title;
 
-    // 当前为测试,先写死
     private String CityId = "5473cce2b8ce043a64108e12";
 
     @Override
@@ -42,17 +45,19 @@ public class CityDetailActivity extends FragmentActivity implements View.OnClick
 
     private void initFragment() {
         Intent intent = getIntent();
-        CityId = intent.getStringExtra(SieConstant.ACTION_EXTRA);
-        title = intent.getStringExtra(SieConstant.ACTION_EXTRA_CITY_NAME);
+        title = intent.getStringExtra("cName");
         if (title != null) {
             city_detail_title.setText(title);
         }
+        CityId = intent.getStringExtra(SieConstant.ACTION_EXTRA);
 
-        String stringExtra = intent.getStringExtra(SieConstant.ACTION_EXTRA);
-        fragment = CityDetailFragment.newInstance(CityId);
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.city_detail_fragment, fragment, "1");
+        fragment = (SearchCityDetailFragment) manager.findFragmentByTag("scdFragment");
+        if (fragment == null) {
+            fragment = SearchCityDetailFragment.newInstance(CityId);
+        }
+        transaction.replace(R.id.city_detail_fragment, fragment, "scdFragment");
         transaction.commit();
     }
 
@@ -67,10 +72,8 @@ public class CityDetailActivity extends FragmentActivity implements View.OnClick
         int id = v.getId();
         switch (id) {
             case R.id.city_detail_hasgone:
-
                 break;
             case R.id.city_detail_like:
-
                 break;
         }
     }

@@ -9,52 +9,7 @@
     <include
         layout="@layout/main_tab_title_item"
         android:layout_width="wrap_content"
-        android:layout_height="48dp" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioGroup
-            android:id="@+id/fragment_trip_radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_trip_word_top_bg"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/fragment_trip_radioButton_inland"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_word_top_trip"
-                android:button="@null"
-                android:checked="true"
-                android:gravity="center"
-                android:paddingBottom="5dp"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:paddingTop="5dp"
-                android:text="国内"
-                android:textColor="@color/selector_word_top_trip" />
-
-            <RadioButton
-                android:id="@+id/fragment_trip_radioButton_foreign"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_word_top_trip"
-                android:button="@null"
-                android:gravity="center"
-                android:paddingBottom="5dp"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:paddingTop="5dp"
-                android:text="国外"
-                android:textColor="@color/selector_word_top_trip" />
-        </RadioGroup>
-    </RelativeLayout>
+        android:layout_height="52dp" />
 
     <LinearLayout
         android:id="@+id/fragment_trip_container"

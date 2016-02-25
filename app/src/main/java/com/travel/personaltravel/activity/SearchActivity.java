@@ -1,6 +1,7 @@
 package com.travel.personaltravel.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -25,6 +27,7 @@ import com.travel.personaltravel.R;
 import com.travel.personaltravel.constant.SieConstant;
 import com.travel.personaltravel.fragment.search.SearchResultFragment;
 import com.travel.personaltravel.model.SearchHot;
+import com.travel.personaltravel.widget.ClearEditText;
 
 import org.json.JSONException;
 
@@ -37,7 +40,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     private TextView search;
     private List<String> historyList;
-    private EditText keyWord;
+    private ClearEditText keyWord;
     private LinearLayout linearAdd;
     private GridView gridViewHistory;
     private GridView gridViewHot;
@@ -56,7 +59,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         gridViewHot = (GridView) findViewById(R.id.search_hot_grid_view);
 
         search = (TextView) findViewById(R.id.search_history_title_tv);
-        keyWord = (EditText) findViewById(R.id.search_keyword_edit_et);
+        keyWord = (ClearEditText) findViewById(R.id.search_keyword_edit_et);
 
         search.setOnClickListener(this);
 
@@ -111,18 +114,16 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             } else {
                 //已保存过
             }
-
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             try {
-                String key = URLEncoder.encode(cityTxt, "utf-8");
-                String url = String.format(SieConstant.SEARCH_CITY_LIST, key);
-
-                SearchResultFragment searchResultFragment = SearchResultFragment.newInstance(url);
-                transaction.replace(R.id.fragment_trip_container, searchResultFragment, "searchResultFragment");
-                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                transaction.addToBackStack(null);
-                transaction.commit();
-
+                if (cityTxt == null || cityTxt.equals("")) {
+                    Toast.makeText(SearchActivity.this, "请输入内容", Toast.LENGTH_SHORT).show();
+                } else {
+                    String key = URLEncoder.encode(cityTxt, "utf-8");
+                    String url = String.format(SieConstant.SEARCH_CITY_LIST, key);
+                    Intent intent = new Intent(SearchActivity.this, SearchResultActivity.class);
+                    intent.putExtra("srUrl", url);
+                    startActivity(intent);
+                }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }

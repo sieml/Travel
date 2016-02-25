@@ -29,7 +29,6 @@ public class SieConstant {
     //美食介绍文字的点击网址
     public static final String Url_Food_Guide = "http://h5.taozilvxing.com/city/dining.php?tid=%s";
 
-
     //美食下面的ListView
     public static final String Url_Food_ListView = "http://api.lvxingpai.com/app/poi/restaurants?locality=%s&page=%d&pageSize=15&imgWidth=300";
 
@@ -42,7 +41,7 @@ public class SieConstant {
     // 购物的介绍文字的点击网址
     public static final String Url_Shopping_Guide = "http://h5.taozilvxing.com/city/shopping.php?tid=%s";
 
-    //TODO-----以下接口是搜索接口--->----组员 siequn 添加-------请不要修改--------------------------------------------------------------------------------------------
+    //TODO-----以下接口是搜索接口--->---- siequn 添加-------请不要修改--------------------------------------------------------------------------------------------
     public static final String INTENT_CITY_ID = "cityID";
 
     public static final String INTENT_CITY_NAME = "cityNAME";
@@ -94,15 +93,10 @@ public class SieConstant {
      * "游记item" 列表, 参数id
      */
     public static final String CITY_TRAVEL_NOTE_WEBVIEW = "http://h5.taozilvxing.com/dayDetail.php?id=%s";
-    //TODO--------以上接口是搜索接口------>-------组员 siequn 添加------------------------------------------------------------------------------------------------------
     /**
-     * 推荐的国外的城市的json数据
+     * 推荐的国内外的城市的json数据
      */
-    public static String pathForeignRecommend = "http://api.lvxingpai.com/app/geo/localities/recommendations?abroad=true";
-    /**
-     * 推荐的国内的城市的json数据
-     */
-    public static String pathInlandRecommend = "http://api.lvxingpai.com/app/geo/localities/recommendations?abroad=false";
+    public static String pathForeignRecommend = "http://api.lvxingpai.com/app/geo/localities/recommendations?abroad=";
     /**
      * 所有国内城市的json数据
      */
@@ -144,6 +138,7 @@ public class SieConstant {
     public static String getSpotListViewItemPath(String cityId) {
         return "http://api.lvxingpai.com/app/poi/viewspots/" + cityId;
     }
+
     /**
      * 基础路径
      */

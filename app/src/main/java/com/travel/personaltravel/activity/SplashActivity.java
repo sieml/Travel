@@ -2,110 +2,119 @@ package com.travel.personaltravel.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
+import android.graphics.Paint;
 import android.support.v4.app.FragmentActivity;
-import android.view.Window;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
-import com.lidroid.xutils.bitmap.callback.BitmapLoadCallBack;
-import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
+import android.widget.TextView;
+
 import com.travel.personaltravel.BuildConfig;
 import com.travel.personaltravel.MainActivity;
-import com.travel.personaltravel.application.AiLYApplication;
 import com.travel.personaltravel.R;
 import com.travel.personaltravel.constant.SieConstant;
+import com.travel.personaltravel.widget.transformer.CubeOutTransformer;
 
-public class SplashActivity extends FragmentActivity implements Runnable {
-    private HttpUtils httpUtils;
+import java.util.ArrayList;
+import java.util.List;
 
-    private ImageView splash_img;
-    private Thread thread;
+public class SplashActivity extends FragmentActivity {
+
+    private ViewPager viewPager;
+
+    private List<ImageView> imgs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE) ;
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_welcome);
+        viewPager = (ViewPager) findViewById(R.id.splash_viewpager);
+        imgs = new ArrayList<>();
+        TextView jumpTv = (TextView) findViewById(R.id.jump_tv);
+        //下划线
+        jumpTv.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
+        //抗锯齿
+        jumpTv.getPaint().setAntiAlias(true);
 
-        initView();
+        ImageView imageView = new ImageView(this);
+        ImageView imageView1 = new ImageView(this);
+        ImageView imageView2 = new ImageView(this);
+        imageView.setImageResource(R.mipmap.guide_1);
+        imageView1.setImageResource(R.mipmap.guide_2);
+        imageView2.setImageResource(R.mipmap.guide_3);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView1.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView2.setScaleType(ImageView.ScaleType.FIT_XY);
 
-    }
+        imgs.add(imageView);
+        imgs.add(imageView1);
+        imgs.add(imageView2);
 
-    private void initView() {
-        splash_img = (ImageView) findViewById(R.id.splash_img);
-        thread = new Thread(this);
-        setImage();
-    }
+        WelVPAdapter adapter = new WelVPAdapter(imgs);
 
-    public void setImage() {
-        // TODO 模拟 网络请求 加载图片
-        AiLYApplication.bitmapUtils.display(splash_img, SieConstant.Url_Splash_Pic, new BitmapLoadCallBack<ImageView>() {
-            @Override
-            public void onLoadCompleted(ImageView container, String uri, Bitmap bitmap, BitmapDisplayConfig config, BitmapLoadFrom from) {
-                if (bitmap != null) {
-                    splash_img.setImageBitmap(bitmap);
-                }
-                thread.start();
-            }
-
-            @Override
-            public void onLoadFailed(ImageView container, String uri, Drawable drawable) {
-                Toast.makeText(SplashActivity.this,"亲,没有网络哟!",Toast.LENGTH_LONG).show();
-                splash_img.setImageResource(R.mipmap.ic_launcher);
-                JumpActivity();
-            }
-        });
-    }
-
-    public void JumpActivity() {
-        // 跳转 Activity
-        Intent intent = new Intent();
-        // TODO 查看 共享参数,和当前的版本的对比  不一致就显示欢迎页
+        viewPager.setAdapter(adapter);
+        viewPager.setPageTransformer(true, new CubeOutTransformer());
+        //获取共享参数 扉页的共享参数的信息
         SharedPreferences sp =
                 getSharedPreferences(SieConstant.Splash_Share, MODE_PRIVATE);
-        // 获取上次保存的的版本号,
-        int version = sp.getInt(SieConstant.App_Version, -1);
-        //更新之后,版本升级,
-        if (BuildConfig.VERSION_CODE != version) {
-            // TODO 显示欢迎页
-            intent.setClass(this, WelcomeActivity.class);
-        } else {
-            // TODO 显示主界面
-            intent.setClass(this, MainActivity.class);
-        }
+        SharedPreferences.Editor edit = sp.edit();
+        //保存当前版本号
+        edit.putInt(SieConstant.App_Version, BuildConfig.VERSION_CODE);
+        edit.apply();
+    }
+
+    // 在进入欢迎页的时候 用户点击 回退按钮,默认进入 MainActivity
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
+    }
+
+    public void welJump(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
-
     }
 
-    @Override
-    public void run() {
-        try {
-            thread.sleep(650);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    /**
+     * ViewPager的适配器
+     */
+    class WelVPAdapter extends PagerAdapter {
+        private List<ImageView> lists;
+
+        public WelVPAdapter(List<ImageView> imgs) {
+            lists = imgs;
         }
-        JumpActivity();
+
+        @Override
+        public int getCount() {
+            int ret = 0;
+            if (lists != null) {
+                ret = lists.size();
+            }
+            return ret;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            container.addView(lists.get(position));
+            return lists.get(position);
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView(lists.get(position));
+        }
+
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

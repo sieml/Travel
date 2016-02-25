@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="#378c8989">
+    android:layout_height="52dp">
 
     <TextView
         android:id="@+id/search_history_title_tv"
@@ -15,11 +14,11 @@
         android:textSize="18sp" />
 
     <ImageView
-        android:id="@+id/searchIcId"
+        android:id="@+id/main_title_bar_search_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:padding="12dp"
-        android:src="@mipmap/ic_search" />
+        android:src="@mipmap/icon_title_bar_search" />
 </RelativeLayout>

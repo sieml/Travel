@@ -1,6 +1,7 @@
 package com.travel.personaltravel.fragment.search;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,7 @@ import com.travel.personaltravel.constant.SieConstant;
 import com.travel.personaltravel.model.SearchResult;
 import com.travel.personaltravel.model.morecity.SearchFirstCity;
 import com.travel.personaltravel.util.ParseUtils;
+import com.travel.personaltravel.widget.ClearEditText;
 
 import org.json.JSONException;
 
@@ -46,7 +48,7 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
     private int TITLE = 1;
     private String[] typeName = {"景点", "美食", "购物"};
     private int i = 0;
-    private static String path;
+    private String path;
 
     private List<SearchResult> data;
     private SearchResultAdapter adapter;
@@ -55,43 +57,45 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
     private TextView cityName;
     private TextView cityAddress;
     private ImageView imgIcon;
-    private EditText txtSo;
-    private EditText editInput;
+    private ClearEditText editInput;
 
     public SearchResultFragment() {
-        // Required empty public constructor
     }
 
 
     public static SearchResultFragment newInstance(String url) {
         SearchResultFragment ret = new SearchResultFragment();
-        path = url;
+        Bundle args = new Bundle();
+        args.putString("srUrl", url);
+        ret.setArguments(args);
         return ret;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        path = getArguments().getString("srUrl");
+        super.onAttach(context);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
-        txtSo = (EditText) view.findViewById(R.id.search_keyword_edit_et);
         listView = (ListView) view.findViewById(R.id.search_result_list_view);
-        View v = LayoutInflater.from(getContext()).inflate(R.layout.search_result_header_view_item, null);
-        cityName = (TextView) v.findViewById(R.id.search_result_name_item1);
-        cityAddress = (TextView) v.findViewById(R.id.search_result_address_item1);
-        imgIcon = (ImageView) v.findViewById(R.id.search_result_icon_item1);
-        editInput = (EditText) v.findViewById (R.id.search_keyword_edit_et);
-
-
         data = new LinkedList<>();
-        listView.addHeaderView(v);
-        adapter = new SearchResultAdapter(getActivity(), data);
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        View v = LayoutInflater.from(getActivity()).inflate(R.layout.search_result_header_view_item, null);
+        cityName = (TextView) v.findViewById(R.id.search_result_name_item1);
+        cityAddress = (TextView) v.findViewById(R.id.search_result_address_item1);
+        imgIcon = (ImageView) v.findViewById(R.id.search_result_icon_item1);
+        editInput = (ClearEditText) v.findViewById(R.id.search_keyword_edit_et);
+        listView.addHeaderView(v);
+        adapter = new SearchResultAdapter(getActivity(), data);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -128,7 +132,6 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
                             if (firstCity != null) {
                                 cityName.setText(firstCity.getZhName());
                                 cityAddress.setText(firstCity.getZhName());
-                                txtSo.setText(firstCity.getZhName());
                                 BitmapUtils bitmapUtils = new BitmapUtils(getActivity());
                                 bitmapUtils.display(imgIcon, firstCity.getImages().get(0).getUrl());
                             }
@@ -150,12 +153,11 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
         }
     }
 
-
     @Override
     public void onClick(View v) {
-        if (v.getId() ==  R.id.search_history_title_tv){
+        if (v.getId() == R.id.search_history_title_tv) {
 
-            if (editInput.getText().length()>0&&editInput!=null) {
+            if (editInput.getText() != null && editInput.getText().length() > 0) {
                 try {
                     String key = URLEncoder.encode(editInput.getText().toString().trim(), "utf-8");
                     path = String.format(SieConstant.SEARCH_CITY_LIST, key);
@@ -165,7 +167,7 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                if(editInput.getText().toString() ==""){
+                if (editInput.getText().toString() == "") {
                     getActivity().getSupportFragmentManager().popBackStack();
                 }
             }

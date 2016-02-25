@@ -26,7 +26,7 @@ import com.travel.personaltravel.application.AiLYApplication;
 import com.travel.personaltravel.R;
 import com.travel.personaltravel.activity.CityCommentTripActivity;
 import com.travel.personaltravel.activity.FoodActivity;
-import com.travel.personaltravel.activity.SearchTestActivity;
+import com.travel.personaltravel.activity.SearchResultActivity;
 import com.travel.personaltravel.activity.ShoppingActivity;
 import com.travel.personaltravel.activity.SpotActivity;
 import com.travel.personaltravel.activity.Travelguide;
@@ -356,7 +356,7 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
                 intent.putExtra(SieConstant.ACTION_EXTRA_CITY_NAME, data.getZhName());
                 break;
             case R.id.fcd_all:
-                intent.setClass(getActivity(), SearchTestActivity.class);
+                intent.setClass(getActivity(), SearchResultActivity.class);
                 break;
 
         }
