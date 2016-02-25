@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:textColor="#55B500"
+    android:id="@+id/route_item_rank"
+    android:background="@drawable/plan_bottom_flower"
+    android:text="0"
+    android:textSize="12sp"
+    android:gravity="center_horizontal"
+    android:paddingTop="10dp"
+    android:layout_width="35dp"
+    android:layout_height="45dp" />
+    <ImageView
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/route_item_img"
+        />
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:id="@+id/route_item_land"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/route_item_recommend"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+</LinearLayout>

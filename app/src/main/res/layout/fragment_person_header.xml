@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#fff"
+
+    android:layout_height="wrap_content">
+    <com.travel.personaltravel.widget.RoundImageView
+        android:id="@+id/person_header_img"
+        android:layout_margin="20dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
+        />
+    <TextView
+        android:id="@+id/person_header_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="18sp"
+        android:layout_toEndOf="@id/person_header_img"
+        android:layout_toRightOf="@id/person_header_img"
+        android:layout_alignTop="@id/person_header_img"
+        />
+    <TextView
+        android:id="@+id/person_header_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/person_header_name"
+        android:layout_alignLeft="@id/person_header_name"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/person_header_rank"
+        android:layout_width="60dp "
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/person_header_id"
+        android:layout_alignBottom="@id/person_header_id"
+        />
+    <View
+        android:background="#6aaa"
+        android:layout_below="@id/person_header_img"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/person_header_line"
+        ></View>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:id="@+id/header_linear"
+        android:layout_below="@id/person_header_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:text="旅行计划"
+            android:drawableLeft="@drawable/my_plan_selected"
+            />
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:text="联系人"
+            android:drawableLeft="@drawable/note_normal"
+            />
+    </LinearLayout>
+    <View
+        android:background="#6aaa"
+        android:layout_below="@id/header_linear"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        ></View>
+</RelativeLayout>

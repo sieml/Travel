@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:background="@drawable/travel_note_item_stroke_line">
+
+        <TextView
+            android:id="@+id/travel_note_item_big_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上海"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/travel_note_item_user_nikename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="央金"
+            android:textSize="12sp"
+            android:layout_below="@id/travel_note_item_big_title"
+            android:layout_marginLeft="80dp"
+            />
+
+        <TextView
+            android:id="@+id/travel_note_item_user_publish_tiem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2012-04-11"
+            android:layout_below="@id/travel_note_item_big_title"
+            android:layout_toRightOf="@id/travel_note_item_user_nikename"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/travel_note_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="阳的景点都在城市的周边。所以我只走了贵阳市区的景点，吃了当地的特色美食。贵阳虽然是省会，但是其发达程度只相当于沿海的二三线城市。贵阳的市"
+            android:textSize="12sp"
+            android:layout_marginTop="70dp"
+            android:textColor="#bf000000"
+            />
+    </RelativeLayout>
+
+
+    <com.travel.personaltravel.widget.RoundImageView
+        android:id="@+id/travel_note_item_one_icon"
+        android:layout_width="80dp"
+        android:layout_marginTop="12dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="13dp"
+        android:scaleType="centerCrop"
+         />
+</FrameLayout>

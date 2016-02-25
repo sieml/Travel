@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#fff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:id="@+id/reInputId"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/round_search_edit_text">
+
+        <ImageView
+            android:id="@+id/searchIcId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="9dp"
+            android:src="@mipmap/ic_search" />
+
+        <com.travel.personaltravel.widget.ClearEditText
+            android:id="@+id/search_keyword_edit_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/searchIcId"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:drawableRight="@mipmap/search_clear_normal"
+            android:gravity="center_vertical"
+            android:hint="城市/景点/美食/购物"
+            android:imeOptions="actionDone"
+            android:textColorHint="#5000"
+            android:textSize="12sp"></com.travel.personaltravel.widget.ClearEditText>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/search_history_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="搜索"
+        android:textSize="16sp" />
+</LinearLayout>

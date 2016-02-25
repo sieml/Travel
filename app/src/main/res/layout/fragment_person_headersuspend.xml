@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="5dp"
+    android:id="@+id/header_linear"
+    android:layout_below="@id/person_header_line"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:text="旅行计划"
+        android:drawableLeft="@drawable/my_plan_selected"
+        />
+    <TextView
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:text="联系人"
+        android:drawableLeft="@drawable/note_normal"
+        />
+</LinearLayout>

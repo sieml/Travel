@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.travel.personaltravel.activity.SearchTripActivity">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+        <TextView
+
+                android:layout_centerVertical="true"
+                android:background="@mipmap/common_icon_navigaiton_back_dark"
+                android:id="@+id/activity_search_trip_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/activity_search_trip_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_search_edit_text"
+                android:orientation="horizontal"
+                >
+            <ImageView
+                    android:id="@+id/searchIcId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="9dp"
+                    android:src="@mipmap/ic_search" />
+            <EditText
+                    android:id="@+id/activity_search_trip_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@id/searchIcId"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="城市/国家"
+                    android:imeOptions="actionDone"
+                    android:textColorHint="#5000"
+                    android:textSize="15sp"/>
+        </LinearLayout>
+        <TextView
+                android:id="@+id/activity_search_trip_search"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+                android:text="搜索"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+    </RelativeLayout>
+    <ListView
+            android:id="@+id/activity_search_trip_listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+</LinearLayout>

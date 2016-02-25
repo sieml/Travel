@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.travel.personaltravel.activity.trip.GridPicActivity">
+
+    <RelativeLayout
+        android:id="@+id/activity_grid_pic_relativeLayout"
+        android:layout_width="match_parent"
+        android:padding="14dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/activity_grid_pic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/common_icon_navigaiton_back_dark" />
+
+        <TextView
+            android:id="@+id/tuji_city_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/activity_grid_pic_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/activity_grid_pic_relativeLayout"
+        android:horizontalSpacing="5dp"
+        android:numColumns="4"
+        android:padding="3dp"
+        android:verticalSpacing="5dp" />
+
+</RelativeLayout>

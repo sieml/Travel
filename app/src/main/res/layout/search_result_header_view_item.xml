@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/search_result_title_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/search_result_icon_item1"
+            android:layout_width="76dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#1000" />
+
+        <TextView
+            android:id="@+id/search_result_name_item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/search_result_icon_item1"
+            />
+
+        <TextView
+            android:id="@+id/search_result_address_item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_result_name_item1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/search_result_icon_item1"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</LinearLayout>

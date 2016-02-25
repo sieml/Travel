@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.travel.personaltravel.activity.WelcomeActivity">
+
+        <android.support.v4.view.ViewPager
+                android:id="@+id/splash_ViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#88888888"
+                />
+
+        <TextView
+                android:text="欢迎页"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+        <Button
+                android:onClick="btn_wel_back"
+                android:text="跳过"
+                android:background="#0000"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+</FrameLayout>

@@ -1,0 +1,44 @@
+.gradle
+/local.properties
+
+.DS_Store
+/build
+/captures
+
+# IntelliJ project files
+.idea/
+*.iml
+*.ipr
+*.iws
+# 名称附带/，代表文件夹
+out/
+bin/
+gen/
+
+# Android Studio
+
+build/
+
+
+#Eclipse project files
+.project
+.settings/
+.classpath
+
+#OS gen
+Thumbs.db
+
+#Temp files
+
+*.bak
+*.tmp
+*.temp
+*.vpp~*
+*.*~
+~*.*
+
+
+
+
+
+

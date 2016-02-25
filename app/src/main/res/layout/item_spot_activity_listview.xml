@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        >
+
+    <FrameLayout
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            >
+
+        <ImageView
+                android:adjustViewBounds="true"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/plan_bottom_flower"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/item_spot_activity_listview_level"
+                />
+
+        <TextView
+                android:text="0"
+                android:textColor="#9ACC67"
+                android:textSize="8sp"
+                android:id="@+id/item_spot_activity_listview_position"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+    </FrameLayout>
+
+    <ImageView
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            android:src="@mipmap/ic_home_tab_search"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/item_spot_activity_listview_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            />
+
+    <TextView
+
+            android:layout_gravity="center_vertical"
+            android:id="@+id/item_spot_activity_listview_spot_name"
+            android:text="台北101大楼"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_tag_show"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_search_history_tag"
+    android:paddingBottom="6dp"
+    android:paddingLeft="22dp"
+    android:paddingRight="22dp"
+    android:paddingTop="6dp"
+    android:singleLine="true"
+    android:text="冲绳"
+    android:textColor="#b131c426"
+    android:textSize="12sp">
+</TextView>

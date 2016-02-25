@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.travel.personaltravel.activity.CityDetailActivity"
+        >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+                <TextView
+                        android:textSize="22sp"
+                        android:textColor="#000"
+                        android:layout_centerInParent="true"
+                        android:text="墨尔本"
+                        android:id="@+id/city_detail_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <ImageButton
+                        android:id="@+id/city_detail_back"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:background="@mipmap/common_icon_navigaiton_back_dark"
+                        android:layout_alignParentLeft="true"
+                        />
+
+                <ImageButton
+                        android:id="@+id/city_detail_add"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@mipmap/ic_add_selected"
+                        />
+
+                <ImageButton
+                        android:id="@+id/city_detail_message"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/abc_btn_radio_to_on_mtrl_015"
+                        android:layout_toLeftOf="@id/city_detail_add"
+                        />
+        </RelativeLayout>
+        <View
+                android:background="#88888888"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                />
+        <FrameLayout
+                android:id="@+id/city_detail_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+
+        </FrameLayout>
+
+        <View
+                android:background="#88888888"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom"
+                >
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        >
+                        <CheckBox
+                                android:layout_width="wrap_content"
+                                android:padding="10dp"
+                                android:background="#00000000"
+                                android:text="去过"
+                                android:id="@+id/city_detail_hasgone"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/checkbox_hasgone"
+                                />
+                </LinearLayout>
+                <View
+                        android:background="#88888888"
+                        android:layout_width="0.5dp"
+                        android:layout_gravity="center"
+                        android:layout_height="30dp"
+                        />
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        >
+                        <CheckBox
+                                android:id="@+id/city_detail_like"
+                                android:layout_width="wrap_content"
+                                android:padding="10dp"
+                                android:background="#00000000"
+                                android:text="喜欢"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/checkbox_like"
+                                />
+                </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.travel.personaltravel">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".application.AiLYApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- TODO 主入口, 请勿轻易修改 -->
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- TODO 不是主入口 放到下面 -->
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.PlanDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.SearchCityDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.trip.GridViewItemActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.trip.GridPicActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity.PlanRouteActivity" />
+        <activity android:name=".activity.CreateSearchTalkActivity" />
+        <activity android:name=".activity.AddSearchTravelPlanActivity" />
+        <activity android:name=".activity.Travelguide" />
+        <activity android:name=".activity.SpotActivity" />
+        <activity android:name=".activity.FoodActivity" />
+        <activity android:name=".activity.ShoppingActivity" />
+        <activity android:name=".activity.trip.PersonDetailInfoActivity" />
+        <activity android:name=".activity.FoodGuideActivity" />
+        <activity android:name=".activity.WelcomeActivity" />
+        <activity android:name=".activity.CityDetailActivity" />
+        <activity android:name=".activity.SearchTripActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.SearchTestActivity" />
+        <activity android:name=".activity.trip.SpotItemActivity" />
+        <activity android:name=".activity.trip.TravelNoteActivity" />
+        <activity android:name=".activity.trip.TravelNoteItemActivity" />
+        <activity android:name=".activity.CityCommentTripActivity" />
+        <activity android:name=".activity.SearchActivity"></activity>
+    </application>
+
+</manifest>
