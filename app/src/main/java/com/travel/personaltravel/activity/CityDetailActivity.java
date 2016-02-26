@@ -15,7 +15,6 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.travel.personaltravel.R;
-import com.travel.personaltravel.fragment.CityDetailFragment;
 import com.travel.personaltravel.fragment.search.SearchCityDetailFragment;
 
 public class CityDetailActivity extends FragmentActivity implements View.OnClickListener {

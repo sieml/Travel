@@ -161,7 +161,6 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
 
                 String cityName = URLEncoder.encode(data.getZhName(), "utf-8");
                 String localExpertUrl = String.format(SieConstant.CITY_LOCAL_EXPERT, cityName);
-//                Log.d("expertUrl", "expertUrl = " + localExpertUrl);
                 //得到 评价列表的 JSON数据
                 httpUtilsComm.send(HttpRequest.HttpMethod.GET, localExpertUrl, new RequestCallBack<String>() {
                     @Override
@@ -195,7 +194,6 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
     private void getSixViewPortPhoto() {
         //判断网址
         if (cityDetailUrl != null && cityDetailUrl.length() > 0) {
-//            Log.d("cityDetailUrl = ",cityDetailUrl);
             HttpUtils httpUtils = new HttpUtils();
 
             httpUtils.send(HttpRequest.HttpMethod.GET, cityDetailUrl, new RequestCallBack<String>() {
@@ -356,7 +354,7 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
                 intent.putExtra(SieConstant.ACTION_EXTRA_CITY_NAME, data.getZhName());
                 break;
             case R.id.fcd_all:
-                intent.setClass(getActivity(), SearchResultActivity.class);
+                //intent.setClass(getActivity(), SearchResultActivity.class);
                 break;
 
         }
@@ -368,7 +366,6 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
     @OnClick(value = {R.id.search_city_detail_cardview_pic})
     public void cardViewOnClick(View view) {
         Intent intent = new Intent(getActivity(), GridPicActivity.class);
-//        Log.d("id", "mCityId = " + mCityId);
         intent.putExtra(SieConstant.ACTION_EXTRA, mCityId);
         intent.putExtra(SieConstant.ACTION_EXTRA_CITY_NAME, data.getZhName());
         startActivity(intent);
@@ -377,7 +374,7 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
     //listView的item点击事件
     @OnItemClick(value = R.id.fcd_listView)
     public void onListViewItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(getActivity(), PersonDetailInfoActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(getActivity(), PersonDetailInfoActivity.class);
+        startActivity(intent);*/
     }
 }

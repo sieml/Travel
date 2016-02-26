@@ -54,7 +54,7 @@
                 android:id="@+id/search_detail_city_hasgone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@mipmap/icon_city_hasgone"
+                android:drawableLeft="@drawable/checkbox_hasgone"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:text="去过" />
@@ -71,7 +71,7 @@
                 android:id="@+id/search_detail_city_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@mipmap/account_labbar_icon_follow_default"
+                android:drawableLeft="@drawable/checkbox_like"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:text="喜欢" />

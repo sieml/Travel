@@ -9,19 +9,13 @@ package com.travel.personaltravel.constant;
  * @Description: TODO
  */
 public class SieConstant {
-    //扉页的共享配置文件的名字
-    public static final String Splash_Share = "Splash_Share";
-    //欢迎页显示的版本,根据版本判断,是否显示欢迎页
-    public static final String App_Version = "Version";
+
 
     //扉页的图片网址
     public static final String Url_Splash_Pic = "http://7sbm17.com1.z0.glb.clouddn.com/lvxingpai-cover-20151009-1080-1920.png?imageView/1/w/720/h/1280/q/85/format/jpg/interlace/1";
 
     //城市详情
     public static final String Url_City_Detail = "http://api.lvxingpai.com/app/geo/localities/%s?noteCnt=3&imgWidth=480";
-
-    //城市详情中的达人评价表
-    public static final String Url_City_CommentList = "http://api.lvxingpai.com/app/users/experts?zone=%E4%B8%89%E4%BA%9A";
 
     //美食介绍
     public static final String Url_Food_Content = "http://api.lvxingpai.com/app/guides/locality/%s/restaurant";
@@ -32,8 +26,6 @@ public class SieConstant {
     //美食下面的ListView
     public static final String Url_Food_ListView = "http://api.lvxingpai.com/app/poi/restaurants?locality=%s&page=%d&pageSize=15&imgWidth=300";
 
-    // WebView跳转的标记
-    public static final String WebView_Tag = "webViewTag";
 
     //购物介绍
     public static final String Url_Shop_Content = "http://api.lvxingpai.com/app/guides/locality/%s/shopping";
@@ -41,10 +33,7 @@ public class SieConstant {
     // 购物的介绍文字的点击网址
     public static final String Url_Shopping_Guide = "http://h5.taozilvxing.com/city/shopping.php?tid=%s";
 
-    //TODO-----以下接口是搜索接口--->---- siequn 添加-------请不要修改--------------------------------------------------------------------------------------------
-    public static final String INTENT_CITY_ID = "cityID";
 
-    public static final String INTENT_CITY_NAME = "cityNAME";
     /**
      * 底部导航栏"搜索" 搜索的结果显示列表
      * 上海
@@ -63,10 +52,7 @@ public class SieConstant {
      */
     public static final String SEARCH_CITY_DETAIL = "http://api.lvxingpai.com/app/geo/localities/%s?noteCnt=3&imgWidth=480";
     /**
-     * 获取gridview中的全部图片
-     *
-     * @param cityId
-     * @return
+     * 城市达人列表
      */
     public static final String CITY_LOCAL_EXPERT = "http://api.lvxingpai.com/app/users/experts?zone=%s";
     /**
@@ -105,36 +91,28 @@ public class SieConstant {
      * 所有国外城市的json数据
      */
     public static String pathForeignAll = "http://api.lvxingpai.com/app/geo/localities/abroad?groupBy=true&imgWidth=300";
-    /**
-     * 城市id
-     */
 
+    //城市id
     public static final String ACTION_EXTRA = "cityId";
-
+    //WebView跳转的标记
+    public static final String WebView_Tag = "webViewTag";
+    //扉页的共享配置文件的名字
+    public static final String Splash_Share = "Splash_Share";
+    //欢迎页显示的版本,根据版本判断,是否显示欢迎页
+    public static final String App_Version = "Version";
+    public static final String INTENT_CITY_ID = "cityID";
+    public static final String INTENT_CITY_NAME = "cityNAME";
     public static final String ACTION_EXTRA_PAGE = "page";
-
     public static final String ACTION_EXTRA_CITY_NAME = "cityName";
 
     public static String getalbumPath(String cityId) {
         return "http://api.lvxingpai.com/app/geo/localities/" + cityId + "/albums?imgWidth=284";
     }
-
-    /**
-     * 获取点击景点后的listView中的数据路径
-     *
-     * @param cityId
-     * @return
-     */
+    //获取点击景点后的listView中的数据路径
     public static String getSpotDataPath(String cityId, int page) {
         return "http://api.lvxingpai.com/app/poi/viewspots?locality=" + cityId + "&page=" + page + "&pageSize=15&imgWidth=300";
     }
-
-    /**
-     * 获取景点中的item点击之后的数据
-     *
-     * @param cityId
-     * @return
-     */
+    //获取景点中的item点击之后的数据
     public static String getSpotListViewItemPath(String cityId) {
         return "http://api.lvxingpai.com/app/poi/viewspots/" + cityId;
     }
@@ -143,9 +121,8 @@ public class SieConstant {
      * 基础路径
      */
     public static final String baseUrl = "http://api.lvxingpai.com";
-
     /**
-     * 刪除旅遊計劃http://api.lvxingpai.com/app/guides/563730e47a2b5a0001b4018d
+     * 刪除旅游计划http://api.lvxingpai.com/app/guides/563730e47a2b5a0001b4018d
      */
     public static final String delPlan = "/app/guides/%s";
     /**
@@ -164,16 +141,14 @@ public class SieConstant {
      * 景点详情
      */
     public static final String featureUrl = "/app/poi/viewspots/547bfe2eb8ce043eb2d88efb";
-
     /**
      * 美食详情
      */
     public static final String foodUrl = "/app/poi/restaurants/54ae69f85c142faec2f70cdc";
 
     /**
-     * 收集的美食推荐
+     * 收集的美食推荐 locid 546f2da8b8ce0440eddb2891
      */
-    //   介绍 locid 546f2da8b8ce0440eddb2891
     public static final String introRestaurant = " /app/guides/locality/%s/restaurant ";
 
     //推荐列表  locid 546f2da8b8ce0440eddb2891  page 0

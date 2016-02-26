@@ -239,7 +239,7 @@ public class CityDetailFragment extends Fragment implements View.OnClickListener
 
         // TODO 加载是ListView里面的网络JSON数据请求
         HttpUtils httpUtilsComm = new HttpUtils();
-        String cityDetailComm = SieConstant.Url_City_CommentList;
+        String cityDetailComm = String.format(SieConstant.CITY_LOCAL_EXPERT,"%E4%B8%89%E4%BA%9A");
         //得到 评价列表的 JSON数据
         httpUtilsComm.send(HttpRequest.HttpMethod.GET, cityDetailComm, new RequestCallBack<String>() {
             @Override

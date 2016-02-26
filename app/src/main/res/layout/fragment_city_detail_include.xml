@@ -11,13 +11,26 @@
         android:layout_marginTop="10dp"
         android:padding="10dp">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentTop="true"
+            android:background="#7000" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="当地达人"
+            android:paddingLeft="5dp"
+            android:text="到访达人"
             android:textColor="#000"
             android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="#7000" />
 
         <TextView
             android:id="@+id/fcd_all"
@@ -26,7 +39,8 @@
             android:layout_alignParentRight="true"
             android:text="全部>"
             android:textColor="#e91cd688"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <com.travel.personaltravel.widget.MyListView
