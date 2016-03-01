@@ -172,7 +172,7 @@ public class CityDetailFragment extends Fragment implements View.OnClickListener
             case R.id.fcd_commtrip:
                 //打開旅行計劃詳細窗口
                 intent.setClass(getContext(), CityCommentTripActivity.class);
-                intent.putExtra("userid", AiLYApplication.userId);
+                intent.putExtra("userid","206502");
                 intent.putExtra("name",cityDetail.getZhName());
                 intent.putExtra("id", cityId);
                 break;

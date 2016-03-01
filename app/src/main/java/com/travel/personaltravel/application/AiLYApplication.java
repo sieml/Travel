@@ -15,12 +15,11 @@ import java.io.File;
  */
 public final class AiLYApplication extends Application {
     public static BitmapUtils bitmapUtils ;
-    public static String userId = "206502" ;
-
+    // 唯一登录设置
+    public static boolean isLogged;
     @Override
     public void onCreate() {
         // TODO 加载一些全局的变量
-        File file = Environment.getDownloadCacheDirectory();
         bitmapUtils = new BitmapUtils(this) ;
         super.onCreate();
 

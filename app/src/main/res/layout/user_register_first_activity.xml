@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserRegisterFirstActivity">
+
+    <include layout="@layout/user_register_input_code_activity_title_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/register_content_right_and_left_padding"
+        android:paddingRight="@dimen/register_content_right_and_left_padding">
+
+        <com.android.mileslife.widget.ClearEditText
+            android:id="@+id/f_user_phone_register_dt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="手机号"
+            android:inputType="phone"
+            android:maxLength="13"
+            android:paddingBottom="@dimen/register_content_padding_bottom"
+            android:paddingTop="@dimen/register_content_padding_top"
+            android:textColor="#000"
+            android:textColorHint="#bfbfbf"
+            android:textSize="@dimen/cmm_content_txt_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcbcbc" />
+
+        <TextView
+            android:id="@+id/f_user_press_next_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cmm_content_opt_height"
+            android:layout_marginTop="@dimen/cmm_content_margin_top"
+            android:background="@drawable/login_reg_bg_selector"
+            android:gravity="center"
+            android:text="下一步"
+            android:textColor="@drawable/login_reg_txt_bg_selector"
+            android:textSize="@dimen/cmm_content_opt_txt_size" />
+    </LinearLayout>
+</LinearLayout>

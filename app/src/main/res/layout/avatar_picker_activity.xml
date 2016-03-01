@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AvatarPickerActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/take_photo_bar_cancel_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingBottom="10dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:src="@mipmap/ico_cancel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="截取头像"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/take_photo_opt_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:onClick="clickUpdate"
+            android:paddingRight="10dp"
+            android:src="@mipmap/ic_action_accept"
+            android:text="确定"
+            android:textColor="#000"
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#B2B2B2" />
+    </RelativeLayout>
+
+    <com.android.mileslife.widget.AvatarPickerView
+        android:id="@+id/source"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/black"
+        android:scaleType="matrix"
+        android:src="@drawable/personal_center_avatar"
+        android:visibility="gone" />
+
+</LinearLayout>

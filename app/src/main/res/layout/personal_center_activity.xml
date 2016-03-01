@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pca_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/personal_center_bg"
+    tools:context=".activity.PersonalCenterActivity">
+
+    <!-- 标题栏-->
+    <RelativeLayout
+        android:id="@+id/personal_center_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/personal_center_title_bar_back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ico_goback_white" />
+
+        <TextView
+            android:id="@+id/personal_center_title_bar_uname_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="15dp"
+            android:text="未登录"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/personal_center_setting_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="12dp"
+            android:src="@mipmap/btn_setting" />
+    </RelativeLayout>
+
+
+    <com.travel.personaltravel.widget.CircleImageView
+        android:id="@+id/personal_center_avatar_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:src="@mipmap/personal_center_avatar"
+        app:border_color="#fff"
+        app:border_width="2dp" />
+
+    <LinearLayout
+        android:id="@+id/personal_center_my_order_ll"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personal_center_avatar_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/view_group_bg_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="14dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ico_myorder"
+            android:drawablePadding="24dp"
+            android:gravity="center_vertical"
+            android:text="我的订单"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="211dp"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/personal_center_my_order_ll"
+        android:layout_centerHorizontal="true"
+        android:background="#E1E1E1" />
+
+    <LinearLayout
+        android:id="@+id/personal_center_my_collect_ll"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personal_center_my_order_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/view_group_bg_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="14dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@mipmap/ico_favorite"
+            android:drawablePadding="24dp"
+            android:gravity="center_vertical"
+            android:text="我的收藏"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="211dp"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/personal_center_my_collect_ll"
+        android:layout_centerHorizontal="true"
+        android:background="#E1E1E1" />
+
+    <LinearLayout
+        android:id="@+id/personal_center_my_balance_ll"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personal_center_my_collect_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/view_group_bg_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="14dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/personal_center_my_balance_ll"
+            android:drawableLeft="@mipmap/ico_wallet"
+            android:drawablePadding="24dp"
+            android:gravity="center_vertical"
+            android:text="我的余额"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="211dp"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/personal_center_my_balance_ll"
+        android:layout_centerHorizontal="true"
+        android:background="#E1E1E1" />
+</RelativeLayout>

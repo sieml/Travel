@@ -2,5 +2,49 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <!-- UI间距-->
+    <dimen name="all_title_bar_height">52dp</dimen>
+    <!-- TODO 首页标题栏左侧-->
+    <dimen name="home_page_title_bar_logo_padding_left">14dp</dimen>
+    <dimen name="home_page_title_bar_logo_padding_top">9dp</dimen>
+    <dimen name="home_page_title_bar_logo_drawable_padding">11dp</dimen>
+    <!-- 首页标题栏右侧-->
+    <dimen name="home_page_title_bar_login_avatar_padding_right">14dp</dimen>
+    <dimen name="home_page_title_bar_login_txt_padding_right">15dp</dimen>
+
+    <!-- TODO 一般标题栏左侧返回-->
+    <dimen name="cmm_title_bar_back_padding_left">14dp</dimen>
+    <dimen name="cmm_title_bar_back_padding_top">15dp</dimen>
+    <dimen name="cmm_title_bar_back_padding_right">10dp</dimen>
+    <dimen name="cmm_title_bar_back_padding_bottom">10dp</dimen>
+    <dimen name="cmm_title_bar_back_drawable_padding">11dp</dimen>
+    <!-- 一般标题栏右侧-->
+    <dimen name="cmm_title_bar_right_opt_padding_right">10dp</dimen>
+    <!-- 一般标题栏底部分割线-->
+    <dimen name="cmm_title_bar_line_margin_top">15dp</dimen>
+
+    <!-- TODO 个人中心280px-->
+    <dimen name="personal_center_avatar_margin_top">98dp</dimen>
+    <dimen name="personal_center_my_order_padding_top">14dp</dimen>
+    <dimen name="personal_center_my_order_padding_bottom">14dp</dimen>
+    <dimen name="personal_center_my_order_drawable_padding">24dp</dimen>
+    <dimen name="personal_center_line_margin_top">211dp</dimen>
+
+    <!-- TODO UI字体大小,一般标题栏左侧或中间字体-->
+    <dimen name="cmm_title_bar_title_txt_size">18sp</dimen>
+    <dimen name="cmm_title_bar_sides_txt_size">16sp</dimen>
+    <dimen name="cmm_content_txt_size">16sp</dimen>
+    <dimen name="cmm_content_opt_txt_size">17sp</dimen>
+    <dimen name="cmm_right_arrow_padding">8sp</dimen>
+
+    <!-- TODO 注册内容的间距-->
+    <dimen name="register_content_right_and_left_padding">36dp</dimen>
+    <dimen name="register_content_padding_top">30dp</dimen>
+    <dimen name="register_content_padding_bottom">12dp</dimen>
+    <!-- 一般内容区 的margin-->
+    <dimen name="cmm_content_margin_top">25dp</dimen>
+    <dimen name="wx_login_content_margin_top">34dp</dimen>
+    <dimen name="cmm_content_opt_height">52dp</dimen>
+    <dimen name="re_miss_content_right_and_left_margin">23dp</dimen>
+    <dimen name="other_login_content_right_and_left_margin">30dp</dimen>
 </resources>

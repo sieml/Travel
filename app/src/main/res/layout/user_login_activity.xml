@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserLoginActivity">
+
+    <include layout="@layout/user_login_activity_title_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/register_content_right_and_left_padding"
+        android:paddingRight="@dimen/register_content_right_and_left_padding">
+
+        <com.android.mileslife.widget.ClearEditText
+            android:id="@+id/user_phone_number_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="手机号"
+            android:inputType="phone"
+            android:maxLength="13"
+            android:paddingBottom="@dimen/register_content_padding_bottom"
+            android:paddingLeft="8dp"
+            android:paddingTop="@dimen/register_content_padding_top"
+            android:textColor="#000"
+            android:drawableRight="@drawable/delete_selector"
+            android:textColorHint="#bfbfbf"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BCBCBC" />
+
+        <com.android.mileslife.widget.ClearEditText
+            android:id="@+id/user_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:paddingBottom="@dimen/register_content_padding_bottom"
+            android:paddingLeft="8dp"
+            android:paddingTop="@dimen/register_content_padding_top"
+            android:textColor="#000"
+            android:textColorHint="#bfbfbf" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BCBCBC" />
+
+        <TextView
+            android:id="@+id/user_click_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cmm_content_opt_height"
+            android:layout_marginTop="@dimen/cmm_content_margin_top"
+            android:background="@drawable/login_reg_bg_selector"
+            android:gravity="center"
+            android:text="登录"
+            android:textColor="@drawable/login_reg_txt_bg_selector"
+            android:textSize="@dimen/cmm_content_opt_txt_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/user_register_account_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="注册账号"
+                android:textColor="@drawable/reg_account_txt_bg_selector"
+                android:textSize="@dimen/cmm_content_txt_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/re_miss_content_right_and_left_margin"
+                android:layout_marginRight="@dimen/re_miss_content_right_and_left_margin"
+                android:src="@drawable/log_in_line" />
+
+            <Button
+                android:id="@+id/user_miss_pwd_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="忘记密码"
+                android:textColor="@drawable/wx_txt_bg_selector"
+                android:textSize="@dimen/cmm_content_txt_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="0.5dp"
+                android:background="#BCBCBC" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/other_login_content_right_and_left_margin"
+                android:layout_marginRight="@dimen/other_login_content_right_and_left_margin"
+                android:text="使用其它账号"
+                android:textColor="#000000" />
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="0.5dp"
+                android:background="#BCBCBC" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/user_wx_third_party_login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/wx_login_content_margin_top"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/ico_wechat"
+            android:gravity="center"
+            android:text="微信登录"
+            android:textColor="@drawable/wx_txt_bg_selector" />
+    </LinearLayout>
+</LinearLayout>

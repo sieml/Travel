@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".activity.UserRegisterLastActivity">
+
+    <include layout="@layout/user_register_input_phone_activity_title_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/register_content_right_and_left_padding"
+        android:paddingRight="@dimen/register_content_right_and_left_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp">
+
+            <com.android.mileslife.widget.ClearEditText
+                android:id="@+id/l_user_sms_code_register_dt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入短信验证码"
+                android:paddingBottom="@dimen/register_content_padding_bottom"
+                android:paddingTop="@dimen/register_content_padding_top"
+                android:textColor="#000"
+                android:textColorHint="#bfbfbf"
+                android:textSize="@dimen/cmm_content_txt_size" />
+
+            <TextView
+                android:id="@+id/l_user_re_gain_sms_code_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/log_in_line"
+                android:drawablePadding="23dp"
+                android:text="重新获取"
+                android:textColor="@drawable/reg_regain_txt_bg_selector"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcbcbc" />
+
+        <com.android.mileslife.widget.ClearEditText
+            android:id="@+id/l_user_create_pwd_dt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:paddingBottom="@dimen/register_content_padding_bottom"
+            android:paddingTop="@dimen/register_content_padding_top"
+            android:textColor="#000"
+            android:textColorHint="#bfbfbf"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcbcbc" />
+
+        <TextView
+            android:id="@+id/l_user_done_register_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cmm_content_opt_height"
+            android:layout_marginTop="@dimen/cmm_content_margin_top"
+            android:background="@drawable/login_reg_bg_selector"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="@drawable/login_reg_txt_bg_selector"
+            android:textSize="@dimen/cmm_content_opt_txt_size" />
+    </LinearLayout>
+</LinearLayout>
