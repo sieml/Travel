@@ -15,7 +15,7 @@
         android:paddingLeft="@dimen/register_content_right_and_left_padding"
         android:paddingRight="@dimen/register_content_right_and_left_padding">
 
-        <com.android.mileslife.widget.ClearEditText
+        <com.travel.personaltravel.widget.ClearEditText
             android:id="@+id/user_phone_number_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_height="1dp"
             android:background="#BCBCBC" />
 
-        <com.android.mileslife.widget.ClearEditText
+        <com.travel.personaltravel.widget.ClearEditText
             android:id="@+id/user_password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/re_miss_content_right_and_left_margin"
                 android:layout_marginRight="@dimen/re_miss_content_right_and_left_margin"
-                android:src="@drawable/log_in_line" />
+                android:src="@mipmap/log_in_line" />
 
             <Button
                 android:id="@+id/user_miss_pwd_btn"
@@ -131,7 +131,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/wx_login_content_margin_top"
             android:drawablePadding="10dp"
-            android:drawableTop="@drawable/ico_wechat"
+            android:drawableTop="@mipmap/ico_wechat"
             android:gravity="center"
             android:text="微信登录"
             android:textColor="@drawable/wx_txt_bg_selector" />

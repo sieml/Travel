@@ -55,7 +55,7 @@
         android:layout_weight="1"
         android:background="@android:color/black"
         android:scaleType="matrix"
-        android:src="@drawable/personal_center_avatar"
+        android:src="@mipmap/personal_center_avatar"
         android:visibility="gone" />
 
 </LinearLayout>

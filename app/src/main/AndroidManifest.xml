@@ -47,6 +47,9 @@
         <activity android:name=".activity.trip.TravelNoteItemActivity" />
         <activity android:name=".activity.CityCommentTripActivity" />
         <activity android:name=".activity.SearchActivity"></activity>
+        <activity android:name=".activity.UserLoginActivity"></activity>
+        <activity android:name=".activity.UserMissPwdActivity"></activity>
+        <activity android:name=".activity.UserRegisterFirstActivity"></activity>
+        <activity android:name=".activity.UserRegisterLastActivity"></activity>
     </application>
-
 </manifest>

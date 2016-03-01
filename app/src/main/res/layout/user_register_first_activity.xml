@@ -15,7 +15,7 @@
         android:paddingLeft="@dimen/register_content_right_and_left_padding"
         android:paddingRight="@dimen/register_content_right_and_left_padding">
 
-        <com.android.mileslife.widget.ClearEditText
+        <com.travel.personaltravel.widget.ClearEditText
             android:id="@+id/f_user_phone_register_dt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
