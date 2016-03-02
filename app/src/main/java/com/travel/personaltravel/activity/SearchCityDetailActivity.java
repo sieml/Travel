@@ -10,40 +10,48 @@ import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.travel.personaltravel.R;
+import com.travel.personaltravel.cache.ACache;
 import com.travel.personaltravel.constant.SieConstant;
 import com.travel.personaltravel.fragment.search.SearchCityDetailFragment;
 
-public class SearchCityDetailActivity extends AppCompatActivity implements View.OnClickListener {
-
-    /**
-     * 返回上一个页面
-     */
-    @ViewInject(R.id.search_detail_city_back)
-    private ImageView backImg;
-
-    @ViewInject(R.id.search_detail_city_name)
-    private TextView cityName;
+public class SearchCityDetailActivity extends AppCompatActivity {
 
 
     private SearchCityDetailFragment fragment;
+    private ACache aCache;
+
+    @ViewInject(R.id.search_detail_city_like)
+    private TextView isLikeTv;
+
+    @ViewInject(R.id.search_detail_city_hasgone)
+    private TextView isGoneTv;
+
+    @ViewInject(R.id.search_detail_city_name)
+    private TextView cityName;
+    private String cityId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_city_detail_activity);
-
+        aCache = ACache.get(this);
+        String isLike = aCache.getAsString("isLike");
+        if (isLike != null && isLike.equals(cityId)) {
+            isLikeTv.setSelected(true);
+        }
+        String isGone = aCache.getAsString("isGone");
+        if (isGone != null && isGone.equals(cityId)) {
+            isGoneTv.setSelected(true);
+        }
         ViewUtils.inject(this);
-
-        //设置事件监听
-        initEvent();
-
         //加载Fragment
         initFragment();
     }
 
     private void initFragment() {
-        String cityId = getIntent().getStringExtra(SieConstant.INTENT_CITY_ID);
+        cityId = getIntent().getStringExtra(SieConstant.INTENT_CITY_ID);
         String searchCityName = getIntent().getStringExtra(SieConstant.INTENT_CITY_NAME);
         cityName.setText(searchCityName);
 
@@ -57,16 +65,26 @@ public class SearchCityDetailActivity extends AppCompatActivity implements View.
         transaction.commit();
     }
 
-    private void initEvent() {
-        backImg.setOnClickListener(this);
+    @OnClick(value = R.id.search_detail_city_like)
+    public void likeClick(View view) {
+        if (view.isSelected()) {
+            aCache.put("isLike", cityId);
+        } else {
+            aCache.put("isLike", "false");
+        }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.search_detail_city_back://返回上一个页面
-                finish();
-                break;
+    @OnClick(value = R.id.search_detail_city_hasgone)
+    public void goneClick(View view) {
+        if (view.isSelected()) {
+            aCache.put("isGone", cityId);
+        } else {
+            aCache.put("isGone", "false");
         }
+    }
+
+    @OnClick(value = R.id.search_detail_city_back)
+    public void finishClick(View view) {
+        finish();
     }
 }

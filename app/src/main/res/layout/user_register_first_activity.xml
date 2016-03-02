@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:gravity="center_vertical"
-            android:hint="手机号"
+            android:hint="用户名"
             android:inputType="phone"
             android:maxLength="13"
             android:paddingBottom="@dimen/register_content_padding_bottom"

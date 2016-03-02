@@ -6,14 +6,19 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.travel.personaltravel.MainActivity;
 import com.travel.personaltravel.R;
+import com.travel.personaltravel.application.AiLYApplication;
+import com.travel.personaltravel.cache.ACache;
 import com.travel.personaltravel.widget.ClearEditText;
 
 import org.json.JSONException;
@@ -30,9 +35,8 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
     private ClearEditText uname;
     private ClearEditText upassword;
     private ImageView cancelIb;
-    private String apiKey;
     private String nickName = "已登录";
-    private String headImg;
+    private ACache aCache;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +54,30 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
         regbtn.setOnClickListener(this);
         Button missBtn = (Button) findViewById(R.id.user_miss_pwd_btn);
         missBtn.setOnClickListener(this);
+        aCache = ACache.get(this);
     }
 
-    //TODO 登录请求, 获取用户API-Key
+    //TODO 登录请求
     private void loginPost() {
-        /**
-         * 登录请求: 是 OkHttp会直接判断"成功" 或 "失败", 对应2个方法
-         * 请求成功返回的头部信息: Auth-Response,1代表登录成功,0用户名错误或者密码错误; API-Key,用户的Key
-         */
-        Map<String, String> params = new HashMap<>();
-        params.put("username", userName);
-        params.put("password", userPwd);
+        String locName = aCache.getAsString("uname");
+        String locPwd = aCache.getAsString("upwd");
+        Log.d("sie", "name = " + locName + ", pwd = " + locPwd);
+        if (locName != null && !locName.equals(userName)) {
+            Toast.makeText(this, "用户名出错", Toast.LENGTH_SHORT).show();
+        } else if (locPwd != null && !locPwd.equals(userPwd)) {
+            Toast.makeText(this, "密码错误", Toast.LENGTH_SHORT).show();
+        } else if (locName.equals(userName) && locPwd.equals(userPwd)) {
+            Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+            AiLYApplication.isLogged = true;
+            aCache.put("isLogin", "true");
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        } else {
+            Toast.makeText(this, "无法验证", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    //手机号码的格式
-    public void phoneNumAddSpace(final EditText mEditText) {
+    public void nameInput(final EditText mEditText) {
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -72,13 +85,6 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (count == 1) {
-                    int len = s.toString().length();
-                    if (len == 3 || len == 8) {
-                        uname.setText(s + " ");
-                        uname.setSelection(uname.getText().toString().length());
-                    }
-                }
             }
 
             @Override
@@ -95,9 +101,7 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.user_click_login_btn:
                 userPwd = upassword.getText().toString();
-                if (userName.equals("") && uname.length() == 11) {
-                    userName = uname.getText().toString();
-                }
+                userName = uname.getText().toString();
                 loginPost();
                 break;
             case R.id.login_title_bar_cancel_iv:

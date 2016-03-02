@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  * Email: siesielee@gmail.com
  * Date: 2015/11/4 [15:33]
  */
-public class SearchHot {
+public class SearchHot implements Serializable {
     private String query;
     private String zhName;
 

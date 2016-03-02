@@ -35,6 +35,7 @@
         <TextView
             android:id="@+id/search_history_clear_history_tv"
             android:layout_width="wrap_content"
+            android:paddingRight="8dp"
             android:layout_height="wrap_content"
             android:text="清除" />
     </LinearLayout>
@@ -69,7 +70,6 @@
         android:orientation="horizontal"
         android:paddingLeft="8dp">
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,6 +97,5 @@
             android:layout_height="match_parent"
             android:numColumns="4"
             android:verticalSpacing="8dp"></GridView>
-
     </LinearLayout>
 </LinearLayout>

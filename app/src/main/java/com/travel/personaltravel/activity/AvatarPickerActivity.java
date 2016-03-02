@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -41,7 +40,7 @@ public class AvatarPickerActivity extends AppCompatActivity implements View.OnCl
     private AvatarPickerView sourceIv;
     private ProgressDialog progressDialog;
     private ACache aCache;
-    private String avatarImgCacheDir = "picasso-cache";
+    private String avatarImgCacheDir = "avatar-cache";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +140,8 @@ public class AvatarPickerActivity extends AppCompatActivity implements View.OnCl
             Bitmap bitmap = sourceIv.getClippedBitmap(512, 512);
             aCache.put("cAvatar", bitmap);
             //File file = aCache.file("cAvatar");
+            hideProgressDialog();
+            finish();
         }
     }
 

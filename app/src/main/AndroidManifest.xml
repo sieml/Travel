@@ -23,7 +23,9 @@
         </activity>
 
         <!-- TODO 不是主入口 放到下面 -->
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".activity.PlanDetailActivity" />
         <activity android:name=".activity.SearchCityDetailActivity" />
         <activity android:name=".activity.trip.GridViewItemActivity" />
@@ -51,5 +53,7 @@
         <activity android:name=".activity.UserMissPwdActivity"></activity>
         <activity android:name=".activity.UserRegisterFirstActivity"></activity>
         <activity android:name=".activity.UserRegisterLastActivity"></activity>
+        <activity android:name=".activity.PersonalCenterActivity"></activity>
+        <activity android:name=".activity.AvatarPickerActivity"></activity>
     </application>
 </manifest>

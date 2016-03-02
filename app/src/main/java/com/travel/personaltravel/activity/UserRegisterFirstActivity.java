@@ -16,12 +16,12 @@ import com.travel.personaltravel.widget.ClearEditText;
 
 public class UserRegisterFirstActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ClearEditText userPhone;
-    private String tel;
+    private ClearEditText userName;
+    private String name;
 
     @Override
     protected void onDestroy() {
-        closeKeybord(userPhone);
+        closeKeybord(userName);
         super.onDestroy();
     }
 
@@ -29,22 +29,21 @@ public class UserRegisterFirstActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_register_first_activity);
-        userPhone = (ClearEditText) findViewById(R.id.f_user_phone_register_dt);
+        userName = (ClearEditText) findViewById(R.id.f_user_phone_register_dt);
         //获取焦点
-        userPhone.setFocusable(true);
-        userPhone.setFocusableInTouchMode(true);
-        userPhone.requestFocus();
-        openKeybord(userPhone);
+        userName.setFocusable(true);
+        userName.setFocusableInTouchMode(true);
+        userName.requestFocus();
+        openKeybord(userName);
         TextView nextPress = (TextView) findViewById(R.id.f_user_press_next_tv);
         TextView backTv = (TextView) findViewById(R.id.f_register_title_bar_cancel_tv);
         nextPress.setOnClickListener(this);
         backTv.setOnClickListener(this);
         //TODO 后期考虑使用正则
-        phoneNumAddSpace(userPhone);
+        nameInput(userName);
     }
 
-    //手机号码的格式
-    public void phoneNumAddSpace(final EditText mEditText) {
+    public void nameInput(final EditText mEditText) {
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -52,18 +51,11 @@ public class UserRegisterFirstActivity extends AppCompatActivity implements View
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (count == 1) {
-                    int len = s.toString().length();
-                    if (len == 3 || len == 8) {
-                        userPhone.setText(s + " ");
-                        userPhone.setSelection(userPhone.getText().toString().length());
-                    }
-                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                tel = userPhone.getText().toString();
+                name = userName.getText().toString();
                 if (s.length() == 13) {
                 }
             }
@@ -95,13 +87,13 @@ public class UserRegisterFirstActivity extends AppCompatActivity implements View
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.f_user_press_next_tv:
-                closeKeybord(userPhone);
+                closeKeybord(userName);
                 Intent intent = new Intent(UserRegisterFirstActivity.this, UserRegisterLastActivity.class);
-                intent.putExtra("uTel", tel);
+                intent.putExtra("uName", name);
                 startActivity(intent);
                 break;
             case R.id.f_register_title_bar_cancel_tv:
-                closeKeybord(userPhone);
+                closeKeybord(userName);
                 finish();
                 break;
         }

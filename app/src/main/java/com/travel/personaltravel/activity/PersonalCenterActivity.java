@@ -8,10 +8,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.travel.personaltravel.MainActivity;
 import com.travel.personaltravel.R;
+import com.travel.personaltravel.application.AiLYApplication;
 import com.travel.personaltravel.cache.ACache;
 import com.travel.personaltravel.widget.CircleImageView;
+import com.travel.personaltravel.widget.CustomDialog;
+
+import java.util.HashMap;
 
 
 public class PersonalCenterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,6 +35,8 @@ public class PersonalCenterActivity extends AppCompatActivity implements View.On
         avatarIv = (CircleImageView) findViewById(R.id.personal_center_avatar_iv);
         ImageView setIv = (ImageView) findViewById(R.id.personal_center_setting_iv);
         uNameTv = (TextView) findViewById(R.id.personal_center_title_bar_uname_tv);
+        TextView exitTv = (TextView) findViewById(R.id.personal_settin_login_out_btn);
+        exitTv.setOnClickListener(this);
         LinearLayout balanceLl = (LinearLayout) findViewById(R.id.personal_center_my_balance_ll);
         balanceLl.setOnClickListener(this);
         LinearLayout uOrderLl = (LinearLayout) findViewById(R.id.personal_center_my_order_ll);
@@ -40,6 +48,10 @@ public class PersonalCenterActivity extends AppCompatActivity implements View.On
         uCollectLl.setOnClickListener(this);
         aCache = ACache.get(this, avatarImgCacheDir);
         Bitmap cAvatar = aCache.getAsBitmap("cAvatar");
+        String mname = aCache.getAsString("uname");
+        if (mname != null) {
+            uNameTv.setText(mname);
+        }
         if (cAvatar != null) {
             avatarIv.setImageBitmap(cAvatar);
         }
@@ -75,6 +87,36 @@ public class PersonalCenterActivity extends AppCompatActivity implements View.On
             case R.id.personal_center_my_collect_ll:
                 break;
             case R.id.personal_center_setting_iv:
+                break;
+            case R.id.personal_settin_login_out_btn:
+                if (AiLYApplication.isLogged) {
+                    //TODO 提示用户慎重操作
+                    final CustomDialog dialog = new CustomDialog(PersonalCenterActivity.this, R.style.mystyle,
+                            R.layout.custom_exit_dialog);
+                    dialog.setnCallback(new CustomDialog.negativeCallback() {
+                        @Override
+                        public void clickCancel() {
+                            //取消对话框
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.setpCallback(new CustomDialog.positiveCallback() {
+                        @Override
+                        public void clickConfirm() {
+                            //提示用户退出
+                            Toast.makeText(PersonalCenterActivity.this, "已退出登录", Toast.LENGTH_SHORT).show();
+                            AiLYApplication.isLogged = false;
+                            aCache.put("isLogin", "false");
+                            Intent intent = new Intent(PersonalCenterActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            PersonalCenterActivity.this.finish();
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                } else {
+                    Toast.makeText(PersonalCenterActivity.this, "您已经处于退出状态了", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

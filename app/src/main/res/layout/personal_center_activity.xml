@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:paddingTop="15dp"
-            android:text="未登录"
+            android:text=""
             android:textColor="#fff"
             android:textSize="18sp" />
 
@@ -152,4 +152,17 @@
         android:layout_below="@id/personal_center_my_balance_ll"
         android:layout_centerHorizontal="true"
         android:background="#E1E1E1" />
+
+    <TextView
+        android:id="@+id/personal_settin_login_out_btn"
+        android:layout_width="273dp"
+        android:layout_height="@dimen/cmm_content_opt_height"
+        android:layout_below="@id/personal_center_my_balance_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/exit_login_bg_selector"
+        android:gravity="center"
+        android:text="退出"
+        android:textColor="#000000"
+        android:textSize="@dimen/cmm_content_opt_txt_size" />
 </RelativeLayout>
