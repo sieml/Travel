@@ -33,6 +33,12 @@ public class PersonalCenterActivity extends AppCompatActivity implements View.On
         avatarIv = (CircleImageView) findViewById(R.id.personal_center_avatar_iv);
         ImageView setIv = (ImageView) findViewById(R.id.personal_center_setting_iv);
         uNameTv = (TextView) findViewById(R.id.personal_center_title_bar_uname_tv);
+        TextView myName = (TextView) findViewById(R.id.pc_my_name_tv);
+        myName.setText("sie");
+        TextView mySex = (TextView) findViewById(R.id.pc_my_sex_tv);
+        mySex.setText("男");
+        TextView myTM = (TextView) findViewById(R.id.pc_my_tm_tv);
+        myTM.setText("走自己路,让别人去说吧!");
         TextView exitTv = (TextView) findViewById(R.id.personal_settin_login_out_btn);
         exitTv.setOnClickListener(this);
         LinearLayout balanceLl = (LinearLayout) findViewById(R.id.personal_center_my_balance_ll);

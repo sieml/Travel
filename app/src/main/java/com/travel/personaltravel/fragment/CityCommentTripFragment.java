@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ListView;
+
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.travel.personaltravel.R;
@@ -17,7 +18,7 @@ import com.travel.personaltravel.R;
  */
 public class CityCommentTripFragment extends Fragment {
     @ViewInject(R.id.fragment_city_comment_trip_lv)
-    private ListView lv ;
+    private ListView lv;
 
     public CityCommentTripFragment() {
         // Required empty public constructor
@@ -29,9 +30,7 @@ public class CityCommentTripFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_city_comment_trip, container, false);
-        ViewUtils.inject(this,view);
+        ViewUtils.inject(this, view);
         return view;
     }
-
-
 }

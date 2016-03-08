@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/personal_center_avatar_iv"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/view_group_bg_selector"
         android:clickable="true"
         android:focusable="true"
