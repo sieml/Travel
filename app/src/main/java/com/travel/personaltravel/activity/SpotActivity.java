@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
+
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -57,7 +58,7 @@ public class SpotActivity extends FragmentActivity {
         if (cityName != null) {
             textViewTitle.setText(cityName + "景点");
             setTitle(cityName + "景点");
-        }else {
+        } else {
             textViewTitle.setText("城市景点");
             setTitle("城市景点");
         }

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
@@ -22,6 +24,8 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.lidroid.xutils.view.annotation.event.OnItemClick;
+import com.travel.personaltravel.activity.CityIntroAllTxtActivity;
+import com.travel.personaltravel.activity.trip.BestSeasonAllTxtActivity;
 import com.travel.personaltravel.application.AiLYApplication;
 import com.travel.personaltravel.R;
 import com.travel.personaltravel.activity.CityCommentTripActivity;
@@ -141,7 +145,8 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
 
     //事件 监听
     private void setOnClickEvent() {
-
+        allTxtRl.setOnClickListener(this);
+        bsTxtLl.setOnClickListener(this);
         search_scdf_guide.setOnClickListener(this);
         search_scdf_spot.setOnClickListener(this);
         search_scdf_food.setOnClickListener(this);
@@ -259,6 +264,7 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
     @ViewInject(R.id.search_scdf_BestSeason)
     private TextView vpBestSeason;
 
+
     //地理位置
     @ViewInject(R.id.search_scdf_desc)
     private TextView vpDesc;
@@ -317,18 +323,21 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
 
     @ViewInject(R.id.fcd_all)
     private TextView fcd_all;
+    @ViewInject(R.id.search_scdf_all_txt_rl)
+    private RelativeLayout allTxtRl;
+    @ViewInject(R.id.search_scdf_BestSeason_ll)
+    private LinearLayout bsTxtLl;
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        Intent intent = new Intent();
-
+        Intent intent = null;
         switch (id) {
             case R.id.search_scdf_guide:
-                intent.setClass(getActivity(), Travelguide.class);
+                intent = new Intent(getActivity(), Travelguide.class);
                 break;
             case R.id.search_scdf_spot:
-                intent.setClass(getActivity(), SpotActivity.class);
+                intent = new Intent(getActivity(), SpotActivity.class);
                 intent.putExtra(SieConstant.ACTION_EXTRA, mCityId);
                 if (data != null) {
                     Log.d("cityName", "cName = " + data.getZhName());
@@ -336,30 +345,38 @@ public class SearchCityDetailFragment extends Fragment implements View.OnClickLi
                 intent.putExtra(SieConstant.ACTION_EXTRA_CITY_NAME, data.getZhName());
                 break;
             case R.id.search_scdf_food:
-                intent.setClass(getActivity(), FoodActivity.class);
+                intent = new Intent(getActivity(), FoodActivity.class);
                 intent.putExtra("food_title", data.getZhName());
                 intent.putExtra("city_id", mCityId);
                 break;
             case R.id.search_scdf_shopping:
-                intent.setClass(getActivity(), ShoppingActivity.class);
+                intent = new Intent(getActivity(), ShoppingActivity.class);
                 intent.putExtra("shopping_title", data.getZhName());
                 intent.putExtra("city_id", mCityId);
                 break;
             case R.id.search_scdf_recommend_trip:
-                intent.setClass(getContext(), CityCommentTripActivity.class);
+                intent = new Intent(getContext(), CityCommentTripActivity.class);
                 intent.putExtra("city_id", mCityId);
                 break;
             case R.id.search_scdf_relative_note:
-                intent.setClass(getActivity(), TravelNoteActivity.class);
+                intent = new Intent(getActivity(), TravelNoteActivity.class);
                 intent.putExtra(SieConstant.ACTION_EXTRA_CITY_NAME, data.getZhName());
                 break;
             case R.id.fcd_all:
                 //intent.setClass(getActivity(), SearchResultActivity.class);
                 break;
-
+            case R.id.search_scdf_BestSeason_ll:
+                intent = new Intent(getActivity(), BestSeasonAllTxtActivity.class);
+                intent.putExtra("bsTxt", data.getTravelMonth());
+                break;
+            case R.id.search_scdf_all_txt_rl:
+                intent = new Intent(getActivity(), CityIntroAllTxtActivity.class);
+                intent.putExtra("cityTxt", data.getDesc());
+                break;
         }
-
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
+        }
     }
 
     //6张 图片父控件的点击事件

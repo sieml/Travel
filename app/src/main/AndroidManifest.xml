@@ -48,12 +48,15 @@
         <activity android:name=".activity.trip.TravelNoteActivity" />
         <activity android:name=".activity.trip.TravelNoteItemActivity" />
         <activity android:name=".activity.CityCommentTripActivity" />
-        <activity android:name=".activity.SearchActivity"></activity>
-        <activity android:name=".activity.UserLoginActivity"></activity>
-        <activity android:name=".activity.UserMissPwdActivity"></activity>
-        <activity android:name=".activity.UserRegisterFirstActivity"></activity>
-        <activity android:name=".activity.UserRegisterLastActivity"></activity>
-        <activity android:name=".activity.PersonalCenterActivity"></activity>
-        <activity android:name=".activity.AvatarPickerActivity"></activity>
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.UserLoginActivity" />
+        <activity android:name=".activity.UserMissPwdActivity" />
+        <activity android:name=".activity.UserRegisterFirstActivity" />
+        <activity android:name=".activity.UserRegisterLastActivity" />
+        <activity android:name=".activity.PersonalCenterActivity" />
+        <activity android:name=".activity.AvatarPickerActivity" />
+        <activity android:name=".activity.trip.BestSeasonAllTxtActivity" />
+        <activity android:name=".activity.CityIntroAllTxtActivity"></activity>
     </application>
+
 </manifest>

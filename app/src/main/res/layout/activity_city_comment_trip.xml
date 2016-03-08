@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:padding="10dp">
 
         <TextView
@@ -18,7 +18,7 @@
             android:layout_centerInParent="true"
             android:text="北京"
             android:textColor="#000"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <ImageButton
             android:id="@+id/city_commenttrip_back"
@@ -26,17 +26,7 @@
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@mipmap/common_icon_navigaiton_back_dark" />
-
-        <ImageButton
-            android:id="@+id/city_commenttrip_copy"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:background="#0000"
-            android:src="@mipmap/icon_copy" />
-
-
+            android:background="@mipmap/go_back_button" />
     </RelativeLayout>
 
     <View
@@ -48,6 +38,7 @@
         android:id="@+id/city_commenttrip_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -80,20 +71,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:elevation="10dp">
+        android:elevation="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#8888" />
-
-
-    </android.support.v7.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#88888888" />
 
     <FrameLayout
         android:id="@+id/city_commenttrip_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
-
-
+        android:layout_height="match_parent" />
 </LinearLayout>

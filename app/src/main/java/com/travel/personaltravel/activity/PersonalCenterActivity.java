@@ -17,8 +17,6 @@ import com.travel.personaltravel.cache.ACache;
 import com.travel.personaltravel.widget.CircleImageView;
 import com.travel.personaltravel.widget.CustomDialog;
 
-import java.util.HashMap;
-
 
 public class PersonalCenterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -87,6 +85,7 @@ public class PersonalCenterActivity extends AppCompatActivity implements View.On
             case R.id.personal_center_my_collect_ll:
                 break;
             case R.id.personal_center_setting_iv:
+                startActivity(new Intent(PersonalCenterActivity.this, PersonalSettingActivity.class));
                 break;
             case R.id.personal_settin_login_out_btn:
                 if (AiLYApplication.isLogged) {

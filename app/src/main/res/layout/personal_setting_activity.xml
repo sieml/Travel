@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.PersonalSettingActivity">
+
+    <include layout="@layout/user_personal_setting_activity_title_item" />
+
+    <RelativeLayout
+        android:id="@+id/personal_setting_about_us_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/long_view_bg_selector"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="关于"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/cmm_right_arrow_padding"
+            android:src="@mipmap/set_arrow" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#DFDFDD" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#DFDFDD" />
+
+    <RelativeLayout
+        android:id="@+id/personal_setting_faq_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/long_view_bg_selector"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="常见问题"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/cmm_right_arrow_padding"
+            android:src="@mipmap/set_arrow" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#DFDFDD" />
+
+    <RelativeLayout
+        android:id="@+id/personal_setting_check_version_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/long_view_bg_selector"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/personal_setting_cur_version_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="检查版本"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/cmm_right_arrow_padding"
+            android:src="@mipmap/set_arrow" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#DFDFDD" />
+
+    <RelativeLayout
+        android:id="@+id/personal_setting_feedback_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/long_view_bg_selector"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="14dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="反馈"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/cmm_right_arrow_padding"
+            android:src="@mipmap/set_arrow" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#DFDFDD" />
+
+</LinearLayout>

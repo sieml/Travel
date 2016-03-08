@@ -123,6 +123,7 @@
 
 
             <LinearLayout
+                android:id="@+id/search_scdf_BestSeason_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
@@ -144,10 +145,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="全文"
-                    android:textColor="#e91cd688" />
+                    android:textColor="#e956f5b3" />
             </LinearLayout>
 
             <RelativeLayout
+                android:id="@+id/search_scdf_all_txt_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
@@ -162,7 +164,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="30dp"
                     android:text="全文"
-                    android:textColor="#e91cd688" />
+                    android:textColor="#e956f5b3" />
 
                 <TextView
                     android:id="@+id/search_scdf_desc"

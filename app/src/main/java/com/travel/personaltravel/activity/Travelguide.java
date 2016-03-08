@@ -8,6 +8,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.lidroid.xutils.view.annotation.event.OnClick;
@@ -23,12 +24,11 @@ public class Travelguide extends FragmentActivity implements BrowserSupport {
     private ProgressBar progressBar;
     private MyWebViewClient webViewClient;
     @ViewInject(R.id.tg_left)
-    private ImageButton tg_left ;
+    private ImageButton tg_left;
     @ViewInject(R.id.tg_refresh)
-    private ImageButton tg_refresh ;
+    private ImageButton tg_refresh;
     @ViewInject(R.id.tg_right)
-    private ImageButton tg_right ;
-
+    private ImageButton tg_right;
 
 
     private String url = "http://h5.taozilvxing.com/city/items.php?tid=546f2da8b8ce0440eddb2890";
@@ -36,7 +36,7 @@ public class Travelguide extends FragmentActivity implements BrowserSupport {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE) ;
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travelguide);
         ViewUtils.inject(this);
@@ -66,8 +66,7 @@ public class Travelguide extends FragmentActivity implements BrowserSupport {
         if (webView.canGoForward()) {
             tg_refresh.setImageResource(R.mipmap.h5_labar_right_hilighted);
             webView.goForward();
-        }
-        else{
+        } else {
 
         }
     }
@@ -95,7 +94,7 @@ public class Travelguide extends FragmentActivity implements BrowserSupport {
     }
 
     @OnClick(R.id.travelguide_back)
-    public void ImageBack(){
+    public void ImageBack() {
         onBackPressed();
     }
 
