@@ -1,6 +1,5 @@
 package com.travel.personaltravel.fragment.search;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,12 +29,10 @@ import com.travel.personaltravel.application.AiLYApplication;
 import com.travel.personaltravel.R;
 import com.travel.personaltravel.activity.CityCommentTripActivity;
 import com.travel.personaltravel.activity.FoodActivity;
-import com.travel.personaltravel.activity.SearchResultActivity;
 import com.travel.personaltravel.activity.ShoppingActivity;
 import com.travel.personaltravel.activity.SpotActivity;
 import com.travel.personaltravel.activity.Travelguide;
 import com.travel.personaltravel.activity.trip.GridPicActivity;
-import com.travel.personaltravel.activity.trip.PersonDetailInfoActivity;
 import com.travel.personaltravel.activity.trip.TravelNoteActivity;
 import com.travel.personaltravel.adapter.MultiItemCommonAdapter;
 import com.travel.personaltravel.adapter.MultiItemTypeSupport;
