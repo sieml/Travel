@@ -1,5 +1,6 @@
 package com.travel.personaltravel.activity;
 
+import com.travel.personaltravel.cache.ACache;
 import com.travel.personaltravel.constant.SieConstant;
 
 import android.content.Intent;
@@ -17,28 +18,35 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.travel.personaltravel.R;
 import com.travel.personaltravel.fragment.search.SearchCityDetailFragment;
 
-public class CityDetailActivity extends FragmentActivity implements View.OnClickListener {
+public class CityDetailActivity extends FragmentActivity{
 
-    @ViewInject(R.id.city_detail_like)
-    private Button like;
-    @ViewInject(R.id.city_detail_hasgone)
-    private Button hasgone;
     @ViewInject(R.id.city_detail_title)
     private TextView city_detail_title;
-    private boolean flaghasgone = true;
-    private boolean flaglike = true;
-    //private CityDetailFragment fragment;
     private SearchCityDetailFragment fragment;
     private String title;
 
     private String CityId = "5473cce2b8ce043a64108e12";
+    @ViewInject(R.id.search_detail_city_like)
+    private TextView isLikeTv;
+
+    @ViewInject(R.id.search_detail_city_hasgone)
+    private TextView isGoneTv;
+    private ACache aCache;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_detail);
+        aCache = ACache.get(this);
+        String isLike = aCache.getAsString("isLike");
+        if (isLike != null && isLike.equals(CityId)) {
+            isLikeTv.setSelected(true);
+        }
+        String isGone = aCache.getAsString("isGone");
+        if (isGone != null && isGone.equals(CityId)) {
+            isGoneTv.setSelected(true);
+        }
         ViewUtils.inject(this);
-        initEvent();
         initFragment();
     }
 
@@ -60,20 +68,21 @@ public class CityDetailActivity extends FragmentActivity implements View.OnClick
         transaction.commit();
     }
 
-    private void initEvent() {
-        like.setOnClickListener(this);
-        hasgone.setOnClickListener(this);
+    @OnClick(value = R.id.search_detail_city_like)
+    public void likeClick(View view) {
+        if (view.isSelected()) {
+            aCache.put("isLike", CityId);
+        } else {
+            aCache.put("isLike", "false");
+        }
     }
 
-
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        switch (id) {
-            case R.id.city_detail_hasgone:
-                break;
-            case R.id.city_detail_like:
-                break;
+    @OnClick(value = R.id.search_detail_city_hasgone)
+    public void goneClick(View view) {
+        if (view.isSelected()) {
+            aCache.put("isGone", CityId);
+        } else {
+            aCache.put("isGone", "false");
         }
     }
 
@@ -81,4 +90,5 @@ public class CityDetailActivity extends FragmentActivity implements View.OnClick
     public void back(View view) {
         this.finish();
     }
+
 }

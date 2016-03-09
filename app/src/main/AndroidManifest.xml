@@ -56,7 +56,9 @@
         <activity android:name=".activity.PersonalCenterActivity" />
         <activity android:name=".activity.AvatarPickerActivity" />
         <activity android:name=".activity.trip.BestSeasonAllTxtActivity" />
-        <activity android:name=".activity.CityIntroAllTxtActivity"></activity>
+        <activity android:name=".activity.CityIntroAllTxtActivity" />
+        <activity android:name=".activity.PersonalSettingActivity" />
+        <activity android:name=".activity.AppAboutActivity"></activity>
     </application>
 
 </manifest>

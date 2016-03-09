@@ -1,6 +1,7 @@
 package com.travel.personaltravel.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,6 @@ public class PersonalSettingActivity extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.personal_setting_activity);
         //TODO token, api-key, username
-        TextView outTv = (TextView) findViewById(R.id.personal_settin_login_out_btn);
         ImageView bcakIv = (ImageView) findViewById(R.id.personal_setting_title_bar_back_iv);
         RelativeLayout fbRl = (RelativeLayout) findViewById(R.id.personal_setting_feedback_rl);
         fbRl.setOnClickListener(this);
@@ -32,7 +32,6 @@ public class PersonalSettingActivity extends AppCompatActivity implements View.O
         RelativeLayout checkVerRl = (RelativeLayout) findViewById(R.id.personal_setting_check_version_rl);
         checkVerRl.setOnClickListener(this);
         bcakIv.setOnClickListener(this);
-        outTv.setOnClickListener(this);
     }
 
 
@@ -41,7 +40,7 @@ public class PersonalSettingActivity extends AppCompatActivity implements View.O
         switch (v.getId()) {
             //TODO 设置
             case R.id.personal_setting_about_us_rl:
-//                startActivity(new Intent(PersonalSettingActivity.this, AppAboutUsActivity.class));
+                startActivity(new Intent(PersonalSettingActivity.this, AppAboutActivity.class));
                 break;
             case R.id.personal_setting_faq_rl:
 //                startActivity(new Intent(PersonalSettingActivity.this, AppFAQActivity.class));

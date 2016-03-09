@@ -54,7 +54,6 @@ public class SplashActivity extends FragmentActivity {
         imgs.add(imageView2);
 
         WelVPAdapter adapter = new WelVPAdapter(imgs);
-
         viewPager.setAdapter(adapter);
         viewPager.setPageTransformer(true, new CubeOutTransformer());
         //获取共享参数 扉页的共享参数的信息
@@ -116,5 +115,4 @@ public class SplashActivity extends FragmentActivity {
         }
 
     }
-
 }

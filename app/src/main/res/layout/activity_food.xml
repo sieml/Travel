@@ -43,6 +43,8 @@
         android:layout_marginBottom="20dp"
         android:maxLines="2"
         android:padding="10dp"
+        android:maxLength="40"
+        android:drawableRight="@android:drawable/ic_menu_add"
         android:text="名古屋的饮食除了保留有日本传统的生鱼片、寿司，还打造自己特有的美味。如名古屋人打制出来的平面（Kishimen）和用miso作为调料的糊面。还有特色小吃Temmusu和Uiro。传统的日式饭团有咸鱼饭团、酸梅饭团、鱼松饭团等，名古屋的天麸罗饭团是名古屋的独创，深受日本全国的喜爱。小巧的紫菜饭团中央露出天麸罗炸得焦黄的“脑袋”，既可爱又诱人食欲。鸡肉刺身是名古屋的特色。做鸡肉刺身的鸡是日本本地饲养的褐色羽毛的鸡，肉质地爽滑没有异味。" />
 
     <ListView
