@@ -140,8 +140,19 @@ public class AvatarPickerActivity extends AppCompatActivity implements View.OnCl
             Bitmap bitmap = sourceIv.getClippedBitmap(512, 512);
             aCache.put("cAvatar", bitmap);
             //File file = aCache.file("cAvatar");
-            hideProgressDialog();
-            finish();
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    hideProgressDialog();
+                    AvatarPickerActivity.this.finish();
+                }
+            });
+            thread.start();
         }
     }
 

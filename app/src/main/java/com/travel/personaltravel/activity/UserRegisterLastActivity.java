@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +43,12 @@ public class UserRegisterLastActivity extends AppCompatActivity implements View.
         switch (v.getId()) {
             case R.id.l_user_done_register_tv:
                 //TODO 监听注册
-                sendRegister();
+                String pwdStr = userPwd.getText().toString();
+                if (pwdStr.length() < 6) {
+                    Toast.makeText(UserRegisterLastActivity.this, "密码长度小于6位", Toast.LENGTH_SHORT).show();
+                } else {
+                    sendRegister(pwdStr);
+                }
                 break;
             case R.id.l_register_title_bar_back_tv:
                 finish();
@@ -48,8 +56,24 @@ public class UserRegisterLastActivity extends AppCompatActivity implements View.
         }
     }
 
-    private void sendRegister() {
-        String pwd = userPwd.getText().toString();
+    public void pwdInput(final EditText mEditText) {
+        mEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                name = userPwd.getText().toString();
+            }
+        });
+    }
+
+    private void sendRegister(String pwd) {
         if (pwd == null || pwd == "") {
             Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
         } else {

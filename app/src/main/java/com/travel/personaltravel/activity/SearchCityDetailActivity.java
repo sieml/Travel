@@ -4,8 +4,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
@@ -22,11 +23,11 @@ public class SearchCityDetailActivity extends AppCompatActivity {
     private SearchCityDetailFragment fragment;
     private ACache aCache;
 
-    @ViewInject(R.id.search_detail_city_like)
-    private TextView isLikeTv;
+    @ViewInject(R.id.detail_city_like)
+    private CheckBox isLikeTv;
 
-    @ViewInject(R.id.search_detail_city_hasgone)
-    private TextView isGoneTv;
+    @ViewInject(R.id.detail_city_hasgone)
+    private CheckBox isGoneTv;
 
     @ViewInject(R.id.search_detail_city_name)
     private TextView cityName;
@@ -37,14 +38,7 @@ public class SearchCityDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_city_detail_activity);
         aCache = ACache.get(this);
-        String isLike = aCache.getAsString("isLike");
-        if (isLike != null && isLike.equals(cityId)) {
-            isLikeTv.setSelected(true);
-        }
-        String isGone = aCache.getAsString("isGone");
-        if (isGone != null && isGone.equals(cityId)) {
-            isGoneTv.setSelected(true);
-        }
+
         ViewUtils.inject(this);
         //加载Fragment
         initFragment();
@@ -52,6 +46,15 @@ public class SearchCityDetailActivity extends AppCompatActivity {
 
     private void initFragment() {
         cityId = getIntent().getStringExtra(SieConstant.INTENT_CITY_ID);
+        String isLike = aCache.getAsString("isLike" + cityId);
+        Log.d("sie", "islike = " + isLike);
+        if (isLike != null && isLike.equals("true")) {
+            isLikeTv.setChecked(true);
+        }
+        String isGone = aCache.getAsString("isGone" + cityId);
+        if (isGone != null && isGone.equals("true")) {
+            isGoneTv.setChecked(true);
+        }
         String searchCityName = getIntent().getStringExtra(SieConstant.INTENT_CITY_NAME);
         cityName.setText(searchCityName);
 
@@ -65,21 +68,29 @@ public class SearchCityDetailActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    private boolean noLChecked = false;
+    private boolean noHChecked = false;
+
     @OnClick(value = R.id.search_detail_city_like)
     public void likeClick(View view) {
-        if (view.isSelected()) {
-            aCache.put("isLike", cityId);
+        Log.d("sie", "gggg");
+        if (!noLChecked) {
+            aCache.put("isLike" + cityId, "true");
+            noLChecked = true;
         } else {
-            aCache.put("isLike", "false");
+            aCache.put("isLike" + cityId, "false");
+            noLChecked = false;
         }
     }
 
     @OnClick(value = R.id.search_detail_city_hasgone)
     public void goneClick(View view) {
-        if (view.isSelected()) {
-            aCache.put("isGone", cityId);
+        if (!noHChecked) {
+            aCache.put("isGone" + cityId, "true");
+            noHChecked = true;
         } else {
-            aCache.put("isGone", "false");
+            aCache.put("isGone" + cityId, "false");
+            noHChecked = false;
         }
     }
 

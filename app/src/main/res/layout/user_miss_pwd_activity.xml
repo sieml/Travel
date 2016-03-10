@@ -6,4 +6,92 @@
     android:orientation="vertical"
     tools:context=".activity.UserMissPwdActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/personal_pwd_title_bar_back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/cmm_title_bar_back_padding_bottom"
+            android:paddingLeft="@dimen/home_page_title_bar_logo_padding_left"
+            android:paddingRight="@dimen/cmm_title_bar_back_padding_right"
+            android:paddingTop="@dimen/cmm_title_bar_back_padding_top"
+            android:src="@mipmap/go_back_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/cmm_title_bar_back_padding_left"
+            android:text="重置密码"
+            android:textColor="#000000"
+            android:textSize="@dimen/cmm_title_bar_title_txt_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#B2B2B2" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/register_content_right_and_left_padding"
+        android:paddingRight="@dimen/register_content_right_and_left_padding">
+
+        <com.travel.personaltravel.widget.ClearEditText
+            android:id="@+id/f_user_new_pwd_dt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:maxLength="13"
+            android:paddingBottom="@dimen/register_content_padding_bottom"
+            android:paddingTop="@dimen/register_content_padding_top"
+            android:textColor="#000"
+            android:textColorHint="#bfbfbf"
+            android:textSize="@dimen/cmm_content_txt_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcbcbc" />
+
+        <com.travel.personaltravel.widget.ClearEditText
+            android:id="@+id/f_user_new_repwd_dt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="再输一次密码"
+            android:inputType="textPassword"
+            android:maxLength="13"
+            android:paddingBottom="@dimen/register_content_padding_bottom"
+            android:paddingTop="@dimen/register_content_padding_top"
+            android:textColor="#000"
+            android:textColorHint="#bfbfbf"
+            android:textSize="@dimen/cmm_content_txt_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcbcbc" />
+
+        <TextView
+            android:id="@+id/f_user_press_confirm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cmm_content_opt_height"
+            android:layout_marginTop="@dimen/cmm_content_margin_top"
+            android:background="@drawable/login_reg_bg_selector"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@drawable/login_reg_txt_bg_selector"
+            android:textSize="@dimen/cmm_content_opt_txt_size" />
+    </LinearLayout>
 </LinearLayout>

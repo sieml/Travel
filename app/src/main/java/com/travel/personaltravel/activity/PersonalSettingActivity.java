@@ -43,10 +43,10 @@ public class PersonalSettingActivity extends AppCompatActivity implements View.O
                 startActivity(new Intent(PersonalSettingActivity.this, AppAboutActivity.class));
                 break;
             case R.id.personal_setting_faq_rl:
-//                startActivity(new Intent(PersonalSettingActivity.this, AppFAQActivity.class));
+                //startActivity(new Intent(PersonalSettingActivity.this, AppFAQActivity.class));
                 break;
             case R.id.personal_setting_feedback_rl:
-//                startActivity(new Intent(PersonalSettingActivity.this, AppFeedbackActivity.class));
+                //startActivity(new Intent(PersonalSettingActivity.this, AppFeedbackActivity.class));
                 break;
             case R.id.personal_setting_check_version_rl:
                 AlertDialog.Builder builder = new AlertDialog.Builder(PersonalSettingActivity.this);

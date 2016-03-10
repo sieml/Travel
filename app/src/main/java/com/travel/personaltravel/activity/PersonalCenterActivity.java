@@ -69,7 +69,7 @@ public class PersonalCenterActivity extends AppCompatActivity implements View.On
         uCollectLl.setOnClickListener(this);
 
         Bitmap cAvatar = aCache.getAsBitmap("cAvatar");
-        String mname = aCache.getAsString("uname");
+        String mname = ACache.get(this).getAsString("uname");
         if (mname != null) {
             uNameTv.setText(mname);
         }

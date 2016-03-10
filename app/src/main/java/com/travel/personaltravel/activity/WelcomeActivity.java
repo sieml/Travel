@@ -58,6 +58,7 @@ public class WelcomeActivity extends FragmentActivity implements Runnable {
     }
 
     public void JumpActivity() {
+        //Acitivity实现接口implements Runnable
         // 跳转 Activity
         Intent intent = new Intent();
         // TODO 查看 共享参数,和当前的版本的对比  不一致就显示欢迎页
@@ -75,7 +76,6 @@ public class WelcomeActivity extends FragmentActivity implements Runnable {
         }
         startActivity(intent);
         finish();
-
     }
 
     @Override

@@ -85,7 +85,7 @@ public class GridPicActivity extends FragmentActivity {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 String result = responseInfo.result;
-//                if (BuildConfig.DEBUG) Log.d("GridPicActivity", result);
+                //if (BuildConfig.DEBUG) Log.d("GridPicActivity", result);
                 LinkedList<Album> listAlbums = ParseUtils.getAlbums(result);
                 albums.addAll(listAlbums);
                 adapter.notifyDataSetChanged();

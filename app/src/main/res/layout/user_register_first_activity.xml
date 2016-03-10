@@ -22,7 +22,7 @@
             android:background="@null"
             android:gravity="center_vertical"
             android:hint="用户名"
-            android:inputType="phone"
+            android:inputType="text"
             android:maxLength="13"
             android:paddingBottom="@dimen/register_content_padding_bottom"
             android:paddingTop="@dimen/register_content_padding_top"

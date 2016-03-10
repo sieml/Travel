@@ -120,13 +120,11 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
     private void downData() {
         HttpUtils http = new HttpUtils();
         if (path != null) {
-
             http.send(HttpRequest.HttpMethod.GET, path, new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     String results = responseInfo.result;
                     if (results != null) {
-
                         try {
                             firstCity = SearchFirstCity.parseJson(results);
                             if (firstCity != null) {
@@ -139,12 +137,10 @@ public class SearchResultFragment extends Fragment implements View.OnClickListen
                             e.printStackTrace();
                         }
                         List<SearchResult> lists = ParseUtils.getSearchResult(results);
-
                         data.addAll(lists);
                         adapter.notifyDataSetChanged();
                     }
                 }
-
                 @Override
                 public void onFailure(HttpException error, String msg) {
                     if (BuildConfig.DEBUG) Log.d("SearchResultFragment", "下载失败:" + msg);

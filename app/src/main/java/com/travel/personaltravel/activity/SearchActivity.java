@@ -257,7 +257,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     private void loadHotSOSO() {
         HttpUtils httpUtils = new HttpUtils();
-
         httpUtils.send(HttpRequest.HttpMethod.GET, SieConstant.SEARCH_CIRT_HOT_LIST, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -270,7 +269,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                     e.printStackTrace();
                 }
             }
-
             @Override
             public void onFailure(HttpException error, String msg) {
 
